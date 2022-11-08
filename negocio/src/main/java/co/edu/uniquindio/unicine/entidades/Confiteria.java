@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,4 +25,7 @@ public class Confiteria implements Serializable {
     private double precio;
 
     private String urlImagen;
+
+    @OneToMany(mappedBy = "confiteria")
+    private List<CompraConfiteria> compra_confiteria;
 }

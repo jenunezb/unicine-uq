@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -33,5 +34,8 @@ public class Pelicula implements Serializable {
     private String reparto;
 
     private Genero genero;
+
+    @OneToMany(mappedBy = "pelicula")
+    private List<Funcion> funcion;
 
 }

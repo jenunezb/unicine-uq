@@ -26,4 +26,10 @@ public class CompraConfiteria implements Serializable {
     @Column(nullable = false)
     @PositiveOrZero
     private int unidades;
+
+    @ManyToOne
+    private Compra compra;
+
+    @ManyToOne
+    private Confiteria confiteria;
 }

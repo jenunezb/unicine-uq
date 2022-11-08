@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,4 +24,13 @@ public class Teatro implements Serializable {
     @Column(length = 10, nullable = false)
     private String telefono;
 
+
+      @ManyToOne
+         private AdministradorTeatro administrador_teatro;
+
+      @ManyToOne
+        private Ciudad ciudad;
+
+      @OneToMany(mappedBy = "teatro")
+        private List<Sala> sala;
 }

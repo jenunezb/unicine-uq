@@ -2,12 +2,10 @@ package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -42,5 +40,10 @@ public class Cliente implements Serializable {
      *     @ElementCollection
      *     private Map <String, String> telefono;
      */
- 
+
+    @OneToMany(mappedBy = "cliente")
+    private List<CuponCliente> cupon_cliente;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compra;
 }

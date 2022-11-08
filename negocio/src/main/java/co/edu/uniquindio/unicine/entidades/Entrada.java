@@ -26,4 +26,7 @@ public class Entrada implements Serializable {
 
     @Column(nullable = false)
     private int columna;
+
+    @ManyToOne
+    private Compra compra;
 }

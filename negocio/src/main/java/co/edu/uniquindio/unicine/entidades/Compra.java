@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,7 +25,21 @@ public class Compra implements Serializable {
     @Column(nullable = false)
     private LocalDateTime fechaCompra;
 
+    @ManyToOne
+    private Cliente cliente;
+
+    @OneToMany(mappedBy = "compra")
+    private List<Entrada> entrada;
+
     @Column(nullable = false)
     private double valorTotal;
 
+    @OneToOne(mappedBy = "compra")
+    private CuponCliente cupon_cliente;
+
+    @ManyToOne
+    private Funcion funcion;
+
+    @OneToMany(mappedBy = "compra")
+    private List<CompraConfiteria> compra_confiteria;
 }

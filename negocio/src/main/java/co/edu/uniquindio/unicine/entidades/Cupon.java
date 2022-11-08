@@ -2,12 +2,10 @@ package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,5 +23,8 @@ public class Cupon implements Serializable {
     private String criterio;
     private String descuento;
     private LocalDate vencimiento;
+
+    @OneToMany(mappedBy = "cupon")
+    private List<CuponCliente> cupon_cliente;
 
 }

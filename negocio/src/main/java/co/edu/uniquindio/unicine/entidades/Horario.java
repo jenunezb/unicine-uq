@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,4 +32,7 @@ public class Horario implements Serializable {
 
     @Column(nullable = false)
     private LocalDateTime fin;
+
+    @OneToMany(mappedBy = "horario")
+    private List<Funcion> funcion;
 }

@@ -5,8 +5,10 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,4 +26,10 @@ public class AdministradorTeatro implements Serializable {
     @Email
     @Column(nullable = false,length = 100, unique = true)
     String correo;
+
+
+    @OneToMany(mappedBy = "administrador_teatro")
+    private List<Teatro> teatro;
+
+
 }

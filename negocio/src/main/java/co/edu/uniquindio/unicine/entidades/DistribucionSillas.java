@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -28,4 +29,7 @@ public class DistribucionSillas implements Serializable {
 
     @Column(nullable = false)
     private int columnas;
+
+    @OneToMany(mappedBy = "distribucion_sillas")
+    private List<Sala> salas;
 }
