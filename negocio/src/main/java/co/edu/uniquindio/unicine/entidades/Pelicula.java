@@ -16,8 +16,9 @@ import java.util.List;
 public class Pelicula implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private String codigo;
+    private Integer codigo;
 
     @Column(length = 100, nullable = false)
     private String nombre;
@@ -33,6 +34,7 @@ public class Pelicula implements Serializable {
 
     private String reparto;
 
+    @Enumerated(EnumType.STRING)
     private Genero genero;
 
     @OneToMany(mappedBy = "pelicula")

@@ -17,8 +17,9 @@ import java.io.Serializable;
 public class CompraConfiteria implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private String codigo;
+    private Integer codigo;
 
     @Column(nullable = false)
     private double precio;

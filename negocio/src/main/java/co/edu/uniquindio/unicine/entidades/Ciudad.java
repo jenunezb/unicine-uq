@@ -9,18 +9,23 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 public class Ciudad implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private String codigo;
+    private Integer codigo;
 
     @Column(length = 100, nullable = false)
     private String nombre;
 
     @OneToMany(mappedBy = "ciudad")
     private List<Teatro> teatro;
+
+    @Builder
+    public Ciudad(String nombre) {
+        this.nombre = nombre;
+    }
 }

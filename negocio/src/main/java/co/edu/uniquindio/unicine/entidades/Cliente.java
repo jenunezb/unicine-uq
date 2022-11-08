@@ -19,8 +19,8 @@ public class Cliente implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
-    @Column(length = 10)
-    private String cedula;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer cedula;
 
     @Column(length = 100, nullable = false)
     private String nombre;

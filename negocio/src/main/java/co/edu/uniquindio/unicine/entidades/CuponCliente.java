@@ -15,8 +15,9 @@ import java.io.Serializable;
 public class CuponCliente implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private String codigo;
+    private Integer codigo;
 
     private String estado;
 

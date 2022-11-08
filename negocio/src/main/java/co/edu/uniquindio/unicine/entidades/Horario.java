@@ -18,8 +18,9 @@ import java.util.List;
 public class Horario implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private String codigo;
+    private Integer codigo;
 
     @Column(nullable = false)
     private LocalDate dia;

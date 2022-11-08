@@ -9,14 +9,14 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 public class Teatro implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private String codigo;
+    private Integer codigo;
 
     @Column(length = 100, nullable = false)
     private String direccion;
@@ -33,4 +33,12 @@ public class Teatro implements Serializable {
 
       @OneToMany(mappedBy = "teatro")
         private List<Sala> sala;
+
+      @Builder
+         public Teatro(String direccion, String telefono, AdministradorTeatro administrador_teatro, Ciudad ciudad) {
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.administrador_teatro = administrador_teatro;
+        this.ciudad = ciudad;
+    }
 }
