@@ -12,7 +12,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
-public class Funcion implements Serializable {
+public class Entrada implements Serializable {
+
     @Id
     @EqualsAndHashCode.Include
     private String codigo;
@@ -20,4 +21,9 @@ public class Funcion implements Serializable {
     @Column(nullable = false)
     private double precio;
 
+    @Column(nullable = false)
+    private int fila;
+
+    @Column(nullable = false)
+    private int columna;
 }

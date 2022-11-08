@@ -3,6 +3,8 @@ package co.edu.uniquindio.unicine.entidades;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.PositiveOrZero;
 import java.io.Serializable;
 
 @Entity
@@ -12,7 +14,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
-public class Funcion implements Serializable {
+public class CompraConfiteria implements Serializable {
+
     @Id
     @EqualsAndHashCode.Include
     private String codigo;
@@ -20,4 +23,7 @@ public class Funcion implements Serializable {
     @Column(nullable = false)
     private double precio;
 
+    @Column(nullable = false)
+    @PositiveOrZero
+    private int unidades;
 }

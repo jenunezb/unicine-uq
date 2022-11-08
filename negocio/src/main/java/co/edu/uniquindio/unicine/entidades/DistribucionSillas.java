@@ -12,12 +12,20 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
-public class Funcion implements Serializable {
+public class DistribucionSillas implements Serializable {
     @Id
     @EqualsAndHashCode.Include
     private String codigo;
 
-    @Column(nullable = false)
-    private double precio;
+    @Column(length = 100, nullable = false)
+    private String esquema;
 
+    @Column(nullable = false)
+    private int totalSillas;
+
+    @Column(nullable = false)
+    private int filas;
+
+    @Column(nullable = false)
+    private int columnas;
 }

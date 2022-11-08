@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -12,12 +14,21 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
-public class Funcion implements Serializable {
+public class Horario implements Serializable {
+
     @Id
     @EqualsAndHashCode.Include
     private String codigo;
 
     @Column(nullable = false)
-    private double precio;
+    private LocalDate dia;
 
+    @Column(nullable = false)
+    private LocalDate hora;
+
+    @Column(nullable = false)
+    private LocalDateTime inicio;
+
+    @Column(nullable = false)
+    private LocalDateTime fin;
 }

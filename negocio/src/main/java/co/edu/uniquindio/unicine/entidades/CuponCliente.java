@@ -2,7 +2,10 @@ package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
@@ -12,12 +15,12 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
-public class Funcion implements Serializable {
+public class CuponCliente implements Serializable {
+
     @Id
     @EqualsAndHashCode.Include
     private String codigo;
 
-    @Column(nullable = false)
-    private double precio;
+    private String estado;
 
 }
