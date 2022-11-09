@@ -22,4 +22,10 @@ insert into ciudad values (10,"Cordoba");
 insert into ciudad values (11,"Circasia");
 insert into ciudad values (12,"Tebaida");
 
+insert into administrador_teatro values (1, "isabella@gmail.com");
+insert into administrador_teatro values (2, "julian@gmail.com");
+insert into administrador_teatro values (3, "esteban@gmail.com");
+insert into administrador_teatro values (4, "nunez@gmail.com");
+insert into administrador_teatro values (5, "bejarano@gmail.com");
+
 
