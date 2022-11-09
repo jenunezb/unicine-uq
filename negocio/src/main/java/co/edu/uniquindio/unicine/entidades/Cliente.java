@@ -11,7 +11,6 @@ import java.util.Map;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -34,16 +33,26 @@ public class Cliente implements Serializable {
     @Column(length = 100, nullable = false)
     private String password;
 
-    private String estado;
+    private boolean estado;
 
     /**
      *     @ElementCollection
      *     private Map <String, String> telefono;
      */
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "cliente")
     private List<CuponCliente> cupon_cliente;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compra;
+
+    public Cliente( String nombre, String correo, String foto_url, String password) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.foto_url = foto_url;
+        this.password = password;
+        this.estado = false;
+    }
 }

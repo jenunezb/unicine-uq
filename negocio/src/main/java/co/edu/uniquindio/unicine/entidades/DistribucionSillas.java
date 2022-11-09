@@ -31,6 +31,7 @@ public class DistribucionSillas implements Serializable {
     @Column(nullable = false)
     private int columnas;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "distribucion_sillas")
     private List<Sala> salas;
 }

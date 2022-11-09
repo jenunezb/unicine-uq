@@ -37,6 +37,7 @@ public class Pelicula implements Serializable {
     @Enumerated(EnumType.STRING)
     private Genero genero;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "pelicula")
     private List<Funcion> funcion;
 

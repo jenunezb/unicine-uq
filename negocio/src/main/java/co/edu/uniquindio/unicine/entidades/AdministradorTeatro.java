@@ -28,6 +28,7 @@ public class AdministradorTeatro implements Serializable {
     String correo;
 
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "administrador_teatro")
     private List<Teatro> teatro;
 

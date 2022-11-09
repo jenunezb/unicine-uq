@@ -21,6 +21,7 @@ public class Funcion implements Serializable {
     @Column(nullable = false)
     private double precio;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "funcion")
     private List<Compra> compra;
 

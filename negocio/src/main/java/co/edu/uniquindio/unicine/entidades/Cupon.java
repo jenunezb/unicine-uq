@@ -32,6 +32,7 @@ public class Cupon implements Serializable {
     @Column(nullable = false)
     private LocalDate vencimiento;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "cupon")
     private List<CuponCliente> cupon_cliente;
 

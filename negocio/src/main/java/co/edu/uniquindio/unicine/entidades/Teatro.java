@@ -13,6 +13,7 @@ import java.util.List;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 public class Teatro implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
@@ -31,7 +32,8 @@ public class Teatro implements Serializable {
       @ManyToOne
         private Ciudad ciudad;
 
-      @OneToMany(mappedBy = "teatro")
+    @ToString.Exclude
+    @OneToMany(mappedBy = "teatro")
         private List<Sala> sala;
 
       @Builder
