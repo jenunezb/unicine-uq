@@ -34,10 +34,11 @@ public class DistribucionSillas implements Serializable {
     @OneToMany(mappedBy = "distribucion_sillas")
     private List<Sala> salas;
 
-    public DistribucionSillas(String esquema, int filas, int columnas, List<Sala> salas) {
+    public DistribucionSillas(String esquema, int filas, int columnas, List<Sala> salas, int totalSillas) {
         this.esquema = esquema;
         this.filas = filas;
         this.columnas = columnas;
         this.salas = salas;
+        this.totalSillas=totalSillas;
     }
 }
