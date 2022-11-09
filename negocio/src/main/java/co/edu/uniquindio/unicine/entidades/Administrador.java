@@ -11,7 +11,6 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -25,4 +24,10 @@ public class Administrador implements Serializable {
     @Email
     @Column(nullable = false,length = 100, unique = true)
     String correo;
+
+    @Builder
+    public Administrador(String cedula, String correo) {
+        this.cedula = cedula;
+        this.correo = correo;
+    }
 }

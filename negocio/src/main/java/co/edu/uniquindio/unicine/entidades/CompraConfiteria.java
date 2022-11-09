@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -33,4 +32,10 @@ public class CompraConfiteria implements Serializable {
 
     @ManyToOne
     private Confiteria confiteria;
+
+    @Builder
+    public CompraConfiteria(double precio, int unidades) {
+        this.precio = precio;
+        this.unidades = unidades;
+    }
 }

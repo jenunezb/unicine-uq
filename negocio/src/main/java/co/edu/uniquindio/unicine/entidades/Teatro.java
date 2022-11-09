@@ -37,7 +37,7 @@ public class Teatro implements Serializable {
         private List<Sala> sala;
 
       @Builder
-         public Teatro(String direccion, String telefono, AdministradorTeatro administrador_teatro, Ciudad ciudad) {
+      public Teatro(String direccion, String telefono, AdministradorTeatro administrador_teatro, Ciudad ciudad) {
         this.direccion = direccion;
         this.telefono = telefono;
         this.administrador_teatro = administrador_teatro;

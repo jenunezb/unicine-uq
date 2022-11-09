@@ -2,10 +2,7 @@ package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
 import java.util.List;
@@ -13,15 +10,15 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 public class AdministradorTeatro implements Serializable {
     @Id
     @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 10)
-    private String cedula;
+    private Integer cedula;
 
     @Email
     @Column(nullable = false,length = 100, unique = true)
@@ -32,5 +29,9 @@ public class AdministradorTeatro implements Serializable {
     @OneToMany(mappedBy = "administrador_teatro")
     private List<Teatro> teatro;
 
-
+    @Builder
+    public AdministradorTeatro(Integer cedula, String correo) {
+        this.cedula = cedula;
+        this.correo = correo;
+    }
 }

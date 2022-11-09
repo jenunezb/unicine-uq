@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -31,4 +30,11 @@ public class Sala implements Serializable {
     @ToString.Exclude
     @OneToMany(mappedBy = "sala")
     private List<Funcion> funcion;
+
+    @Builder
+    public Sala(String nombre, Teatro teatro, DistribucionSillas distribucion_sillas) {
+        this.nombre = nombre;
+        this.teatro = teatro;
+        this.distribucion_sillas = distribucion_sillas;
+    }
 }

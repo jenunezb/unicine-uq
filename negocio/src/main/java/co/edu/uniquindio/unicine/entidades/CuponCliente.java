@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -29,4 +28,11 @@ public class CuponCliente implements Serializable {
 
     @OneToOne
     private Compra compra;
+
+    public CuponCliente(String estado, Cupon cupon, Cliente cliente, Compra compra) {
+        this.estado = estado;
+        this.cupon = cupon;
+        this.cliente = cliente;
+        this.compra = compra;
+    }
 }

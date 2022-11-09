@@ -11,7 +11,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -49,4 +48,17 @@ public class Compra implements Serializable {
     @ToString.Exclude
     @OneToMany(mappedBy = "compra")
     private List<CompraConfiteria> compra_confiteria;
+
+    @Builder
+
+    public Compra(MedioPago medioPago, double valorTotal, Cliente cliente, List<Entrada> entrada, CuponCliente cupon_cliente, Funcion funcion, List<CompraConfiteria> compra_confiteria) {
+        this.medioPago = medioPago;
+        this.valorTotal = valorTotal;
+        this.cliente = cliente;
+        this.entrada = entrada;
+        this.cupon_cliente = cupon_cliente;
+        this.funcion = funcion;
+        this.compra_confiteria = compra_confiteria;
+        fechaCompra=LocalDateTime.now();
+    }
 }

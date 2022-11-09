@@ -37,7 +37,6 @@ public class Cupon implements Serializable {
     private List<CuponCliente> cupon_cliente;
 
     @Builder
-
     public Cupon(String descripcion, String criterio, String descuento, LocalDate vencimiento, List<CuponCliente> cupon_cliente) {
         this.descripcion = descripcion;
         this.criterio = criterio;

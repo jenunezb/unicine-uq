@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -34,4 +33,11 @@ public class DistribucionSillas implements Serializable {
     @ToString.Exclude
     @OneToMany(mappedBy = "distribucion_sillas")
     private List<Sala> salas;
+
+    public DistribucionSillas(String esquema, int filas, int columnas, List<Sala> salas) {
+        this.esquema = esquema;
+        this.filas = filas;
+        this.columnas = columnas;
+        this.salas = salas;
+    }
 }

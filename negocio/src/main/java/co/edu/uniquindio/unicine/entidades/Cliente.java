@@ -28,6 +28,7 @@ public class Cliente implements Serializable {
     @Email
     private String correo;
 
+    @Column(nullable = false)
     private String foto_url;
 
     @Column(length = 100, nullable = false)
@@ -35,10 +36,9 @@ public class Cliente implements Serializable {
 
     private boolean estado;
 
-    /**
-     *     @ElementCollection
-     *     private Map <String, String> telefono;
-     */
+    @ElementCollection
+    private Map <String, String> telefono;
+
 
     @ToString.Exclude
     @OneToMany(mappedBy = "cliente")

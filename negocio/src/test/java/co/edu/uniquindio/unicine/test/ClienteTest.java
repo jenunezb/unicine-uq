@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.util.Assert;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -20,69 +22,40 @@ public class ClienteTest {
     private ClienteRepo clienteRepo;
 
     @Test
+    @Sql("classpath:dataset.sql")
     public void registrar(){
-
-        ArrayList<String> telefonos = new ArrayList<>();
-        telefonos.add("3244545");
         Cliente cliente = new Cliente("pepito", "pepe@gmail.com", "ruta", "12344");
-
         Cliente guardado = clienteRepo.save(cliente);
         Assertions.assertNotNull(guardado);
     }
 @Test
+@Sql("classpath:dataset.sql")
     public void eliminar(){
-
-        Cliente cliente = new Cliente("pepito", "pepe@gmail.com", "ruta", "12344");
-        cliente.setCedula(1);
-
-        Cliente guardado = clienteRepo.save(cliente);
-
-        clienteRepo.delete(guardado);
-
-        Optional<Cliente> buscado = clienteRepo.findById(1);
-
-        Assertions.assertNull(buscado.orElse(null));
+        Cliente buscado = clienteRepo.findById(1).orElse(null);
+        clienteRepo.delete(buscado);
+        Assertions.assertNull(clienteRepo.findById(1).orElse(null));
     }
 
     @Test
+    @Sql("classpath:dataset.sql")
     public void actualizar(){
-
-        Cliente cliente = new Cliente("pepito", "pepe@gmail.com", "ruta", "12344");
-        cliente.setCedula(1);
-
-        Cliente guardado = clienteRepo.save(cliente);
-
-        guardado.setCorreo("pepe_nuevo@gmail.com");
-
+       Cliente guardado = clienteRepo.findById(1).orElse(null);
+        guardado.setCorreo("pepe@gmail.com");
         Cliente nuevo = clienteRepo.save(guardado);
-
-        Assertions.assertEquals("pepe_nuevo@gmail.com", nuevo.getCorreo());
+        Assertions.assertEquals("pepe@gmail.com", nuevo.getCorreo());
     }
 
     @Test
+    @Sql("classpath:dataset.sql")
     public void obtener(){
-        Cliente cliente = new Cliente("pepito", "pepe@gmail.com", "ruta", "12344");
-
-        Cliente guardado = clienteRepo.save(cliente);
-        System.out.println(guardado);
-
-        Optional<Cliente> buscado = clienteRepo.findById(16);
-
-       System.out.println(buscado.orElse(null));
-
+        Optional<Cliente> buscado = clienteRepo.findById(1);
+        Assertions.assertNotNull(buscado.orElse(null));
     }
 
     @Test
+    @Sql("classpath:dataset.sql")
     public void listar(){
-
-        Cliente cliente = new Cliente("pepito", "pepe@gmail.com", "ruta", "12344");
-
-        Cliente guardado = clienteRepo.save(cliente);
-
-        clienteRepo.save(cliente);
-
         List<Cliente> lista = clienteRepo.findAll();
-
-        System.out.println(lista);
+        lista.forEach(System.out::println);
     }
 }

@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -33,4 +32,12 @@ public class Funcion implements Serializable {
 
     @ManyToOne
     private Pelicula pelicula;
+
+    @Builder
+    public Funcion(double precio,  Sala sala, Horario horario, Pelicula pelicula) {
+        this.precio = precio;
+        this.sala = sala;
+        this.horario = horario;
+        this.pelicula = pelicula;
+    }
 }

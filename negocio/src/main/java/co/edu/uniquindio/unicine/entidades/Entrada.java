@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
@@ -30,4 +29,12 @@ public class Entrada implements Serializable {
 
     @ManyToOne
     private Compra compra;
+
+    @Builder
+    public Entrada(double precio, int fila, int columna, Compra compra) {
+        this.precio = precio;
+        this.fila = fila;
+        this.columna = columna;
+        this.compra = compra;
+    }
 }
