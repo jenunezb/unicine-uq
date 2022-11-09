@@ -28,4 +28,22 @@ insert into administrador_teatro values (3, "esteban@gmail.com");
 insert into administrador_teatro values (4, "nunez@gmail.com");
 insert into administrador_teatro values (5, "bejarano@gmail.com");
 
+insert into entrada values (1, 1, 2, 7000, null);
+insert into entrada values (2, 1, 3, 7000, null);
+insert into entrada values (3, 1, 4, 7000, null);
+insert into entrada values (4, 2, 1, 7000, null);
+insert into entrada values (5, 4, 1, 7000, null);
+
+insert into cupon values (1, " el criterio es tal", "la descripcion es x", 0.8, '2022/06/19');
+insert into cupon values (2, " el criterio es tal", "la descripcion es x", 0.9, '2022/01/19');
+insert into cupon values (3, " el criterio es tal", "la descripcion es x", 0.2, '2022/05/19');
+insert into cupon values (4, " el criterio es tal", "la descripcion es x", 0.5, '2022/12/19');
+insert into cupon values (5, " el criterio es tal", "la descripcion es x", 0.4, '2022/05/26');
+
+insert into funcion values (1, 3400, null, null, null);
+insert into funcion values (2, 7400, null, null, null);
+insert into funcion values (3, 13400, null, null, null);
+insert into funcion values (4, 15400, null, null, null);
+insert into funcion values (5, 2500, null, null, null);
+
 

@@ -27,7 +27,7 @@ public class Cupon implements Serializable {
 
     @Positive
     @Column(nullable = false)
-    private String descuento;
+    private Double descuento;
 
     @Column(nullable = false)
     private LocalDate vencimiento;
@@ -37,7 +37,7 @@ public class Cupon implements Serializable {
     private List<CuponCliente> cupon_cliente;
 
     @Builder
-    public Cupon(String descripcion, String criterio, String descuento, LocalDate vencimiento, List<CuponCliente> cupon_cliente) {
+    public Cupon(String descripcion, String criterio, double descuento, LocalDate vencimiento, List<CuponCliente> cupon_cliente) {
         this.descripcion = descripcion;
         this.criterio = criterio;
         this.descuento = descuento;

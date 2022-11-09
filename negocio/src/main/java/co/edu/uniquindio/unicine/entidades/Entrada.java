@@ -31,10 +31,9 @@ public class Entrada implements Serializable {
     private Compra compra;
 
     @Builder
-    public Entrada(double precio, int fila, int columna, Compra compra) {
+    public Entrada(double precio, int fila, int columna) {
         this.precio = precio;
         this.fila = fila;
         this.columna = columna;
-        this.compra = compra;
     }
 }
