@@ -40,17 +40,32 @@ insert into cupon values (3, " el criterio es tal", "la descripcion es x", 0.2, 
 insert into cupon values (4, " el criterio es tal", "la descripcion es x", 0.5, '2022/12/19');
 insert into cupon values (5, " el criterio es tal", "la descripcion es x", 0.4, '2022/05/26');
 
-insert into funcion values (1, 3400, null, null, null);
-insert into funcion values (2, 7400, null, null, null);
-insert into funcion values (3, 13400, null, null, null);
-insert into funcion values (4, 15400, null, null, null);
-insert into funcion values (5, 2500, null, null, null);
+insert into pelicula values (1, "estado", "ACCION", "imagen_url", "La vida es bella","reparto", "sinopsis","url_trailer");
+insert into pelicula values (2, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (3, "estado", "ACCION", "imagen_url", "Naruto Shipuden","reparto", "sinopsis","url_trailer");
+insert into pelicula values (4, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (5, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
 
+insert into funcion values (1, 3400, null, 3, null);
+insert into funcion values (2, 7400, null, 2, null);
+insert into funcion values (3, 13400, null, 1, null);
+insert into funcion values (4, 15400, null, 4, null);
+insert into funcion values (5, 2500, null, 5, null);
+
+/*
+    Inserto compras en el siguiente orden
+    Codigo de compra
+    Fecha de la compra
+    Medio de pago
+    Valor total de la compra
+    Cédula del cliente
+    Código de la función
+ */
 insert into compra values (1, '2022-11-09', 'NEQUI', 6800, 2, null);
-insert into compra values (2, '2021-11-19', 'DAVIPLATA', 16800, 2, null);
-insert into compra values (3, '2023-01-09', 'VISA', 34800, 2, null);
-insert into compra values (4, '2022-11-09', 'NEQUI', 65800, 2, null);
-insert into compra values (5, '2022-11-09', 'NEQUI', 9000, 2, null);
+insert into compra values (2, '2021-11-19', 'DAVIPLATA', 16800, 3, null);
+insert into compra values (3, '2023-01-09', 'VISA', 34800, 4, null);
+insert into compra values (4, '2022-11-09', 'NEQUI', 65800, 1, null);
+insert into compra values (5, '2022-11-09', 'NEQUI', 9000, 5, null);
 
 insert into confiteria values (1, "crispetas grandes", 32500, "url_imagen");
 insert into confiteria values (2, "crispetas medianas", 25500, "url_imagen");
@@ -70,8 +85,10 @@ insert into horario values (3, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-
 insert into horario values (4, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
 insert into horario values (5, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
 
-insert into pelicula values (1, "estado", "genero", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (2, "estado", "genero", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (3, "estado", "genero", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (4, "estado", "genero", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (5, "estado", "genero", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+insert into teatro values (1, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);
+insert into teatro values (2, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 2);
+insert into teatro values (3, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 4);
+insert into teatro values (4, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);
+insert into teatro values (5, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 5);
+
+

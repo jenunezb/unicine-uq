@@ -31,9 +31,11 @@ public class Cliente implements Serializable {
     @Column(nullable = false)
     private String foto_url;
 
+    @ToString.Exclude
     @Column(length = 100, nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private boolean estado;
 
     @ElementCollection

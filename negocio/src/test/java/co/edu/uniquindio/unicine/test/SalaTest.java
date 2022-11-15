@@ -1,4 +1,4 @@
 package co.edu.uniquindio.unicine.test;
 
-public class SalaRepo {
+public class SalaTest {
 }

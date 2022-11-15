@@ -21,7 +21,7 @@ public class PeliculaTest {
 
     @Test
     @Sql("classpath:dataset.sql")
-    public void registrar(){
+    public void registrar() {
         Pelicula pelicula = new Pelicula("Eterno resplandor de una mente sin recuerdo", "sinopsis", "url_trailer",
                 "url_imagen", "Estado", "reparto", Genero.ACCION);
         Pelicula guardado = peliculaRepo.save(pelicula);
@@ -30,10 +30,8 @@ public class PeliculaTest {
 
     @Test
     @Sql("classpath:dataset.sql")
-    public void listar(){
+    public void listar() {
         List<Pelicula> lista = peliculaRepo.findAll();
         lista.forEach(System.out::println);
     }
-
-
 }

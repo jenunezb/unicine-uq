@@ -1,12 +1,15 @@
 package co.edu.uniquindio.unicine.test;
 
 import co.edu.uniquindio.unicine.entidades.Cliente;
+import co.edu.uniquindio.unicine.entidades.Compra;
 import co.edu.uniquindio.unicine.repo.ClienteRepo;
+import co.edu.uniquindio.unicine.repo.CompraRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
@@ -17,6 +20,8 @@ import java.util.Optional;
 public class ClienteTest {
     @Autowired
     private ClienteRepo clienteRepo;
+    @Autowired
+    private CompraRepo compraRepo;
 
     @Test
     @Sql("classpath:dataset.sql")
@@ -55,4 +60,19 @@ public class ClienteTest {
         List<Cliente> lista = clienteRepo.findAll();
         lista.forEach(System.out::println);
     }
+
+    @Test
+    @Sql("classpath:dataset.sql")
+    public void obtenerPorCorreo(){
+        Cliente cliente = clienteRepo.findByCorreo("gabriela@gmail.com");
+       System.out.println(cliente);
+    }
+
+    @Test
+    @Sql("classpath:dataset.sql")
+    public void findByCorreoAndPassword(){
+        Cliente cliente = clienteRepo.comprobarAutenticacion("gabriela@gmail.com", "123");
+        Assertions.assertNotNull(cliente);
+    }
+
 }
