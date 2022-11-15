@@ -24,7 +24,7 @@ public class AdministradorTeatroTest {
     @Test
     @Sql("classpath:dataset.sql")
     public void registrar(){
-        AdministradorTeatro administradorTeatro = new AdministradorTeatro(1, "administradorteatro@gmail.com");
+        AdministradorTeatro administradorTeatro = new AdministradorTeatro(1, "Felipe","administradorteatro@gmail.com",null);
         AdministradorTeatro guardado = administradorRepo.save(administradorTeatro);
         Assertions.assertNotNull(guardado);
     }

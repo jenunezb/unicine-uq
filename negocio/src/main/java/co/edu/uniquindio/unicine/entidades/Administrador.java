@@ -11,7 +11,6 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 public class Administrador extends Persona implements Serializable {
 
@@ -19,6 +18,7 @@ public class Administrador extends Persona implements Serializable {
     @Column(nullable = false,length = 100, unique = true)
     String correo;
 
+    @Builder
     public Administrador(Integer cedula, String nombre, String correo) {
         super(cedula, nombre);
         this.correo = correo;

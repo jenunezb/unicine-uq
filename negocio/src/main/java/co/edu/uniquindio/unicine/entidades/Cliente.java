@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -18,12 +19,13 @@ public class Cliente implements Serializable {
 
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     private Integer cedula;
 
     @Column(length = 100, nullable = false)
     private String nombre;
 
+    @NotNull
     @Column(length = 150, nullable = false, unique = true)
     @Email
     private String correo;
@@ -50,11 +52,13 @@ public class Cliente implements Serializable {
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compra;
 
-    public Cliente( String nombre, String correo, String foto_url, String password) {
+    @Builder
+    public Cliente( String nombre, String correo, String foto_url, String password, Integer cedula) {
         this.nombre = nombre;
         this.correo = correo;
         this.foto_url = foto_url;
         this.password = password;
         this.estado = false;
+        this.cedula=cedula;
     }
 }

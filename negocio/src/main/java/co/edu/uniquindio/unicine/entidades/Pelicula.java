@@ -29,25 +29,28 @@ public class Pelicula implements Serializable {
 
     private String imagen;
 
-    private String estado;
+    @Column(nullable = false)
+    private boolean estado;
 
     private String reparto;
 
     @Enumerated(EnumType.STRING)
-    private Genero genero;
+    @ElementCollection
+    @Column(nullable = false)
+    private List<Genero> generos;
 
     @ToString.Exclude
     @OneToMany(mappedBy = "pelicula")
     private List<Funcion> funcion;
 
     @Builder
-    public Pelicula(String nombre, String sinopsis, String urlTrailer, String imagen, String estado, String reparto, Genero genero) {
+    public Pelicula(String nombre, String sinopsis, String urlTrailer, String imagen, boolean estado, String reparto, List<Genero> generos) {
         this.nombre = nombre;
         this.sinopsis = sinopsis;
         this.urlTrailer = urlTrailer;
         this.imagen = imagen;
         this.estado = estado;
         this.reparto = reparto;
-        this.genero = genero;
+        this.generos = generos;
     }
 }

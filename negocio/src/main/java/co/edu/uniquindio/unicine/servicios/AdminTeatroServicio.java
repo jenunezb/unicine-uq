@@ -1,2 +1,4 @@
-package co.edu.uniquindio.unicine.servicios;public interface AdminTeatroServicio {
+package co.edu.uniquindio.unicine.servicios;
+
+public interface AdminTeatroServicio {
 }

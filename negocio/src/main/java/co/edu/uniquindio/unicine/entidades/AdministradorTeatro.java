@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
-public class AdministradorTeatro implements Serializable {
+public class AdministradorTeatro extends Persona implements Serializable {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,8 +30,9 @@ public class AdministradorTeatro implements Serializable {
     private List<Teatro> teatro;
 
     @Builder
-    public AdministradorTeatro(Integer cedula, String correo) {
-        this.cedula = cedula;
+    public AdministradorTeatro(Integer cedula, String nombre, String correo, List<Teatro> teatro) {
+        super(cedula, nombre);
         this.correo = correo;
+        this.teatro = teatro;
     }
 }

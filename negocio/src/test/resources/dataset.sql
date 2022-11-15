@@ -22,11 +22,12 @@ insert into ciudad values (10,"Cordoba");
 insert into ciudad values (11,"Circasia");
 insert into ciudad values (12,"Tebaida");
 
-insert into administrador_teatro values (1, "isabella@gmail.com");
-insert into administrador_teatro values (2, "julian@gmail.com");
-insert into administrador_teatro values (3, "esteban@gmail.com");
-insert into administrador_teatro values (4, "nunez@gmail.com");
-insert into administrador_teatro values (5, "bejarano@gmail.com");
+
+insert into administrador_teatro values (1,"Isabela", "isabella@gmail.com");
+insert into administrador_teatro values (2,"Julian", "julian@gmail.com");
+insert into administrador_teatro values (3,"Esteban", "esteban@gmail.com");
+insert into administrador_teatro values (4,"Nuñez", "nunez@gmail.com");
+insert into administrador_teatro values (5,"Bejarano", "bejarano@gmail.com");
 
 insert into pelicula values (1, "estado", "ACCION", "imagen_url", "La vida es bella","reparto", "sinopsis","url_trailer");
 insert into pelicula values (2, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
@@ -103,7 +104,4 @@ insert into confiteria values (2, "crispetas medianas", 25500, "url_imagen");
 insert into confiteria values (3, "crispetas pequeñas", 12500, "url_imagen");
 insert into confiteria values (4, "chocolatina pequeña", 3000, "url_imagen");
 insert into confiteria values (5, "paquete de papas grande", 12500, "url_imagen");
-
-
-
 

@@ -20,7 +20,6 @@ public interface ClienteRepo extends JpaRepository<Cliente, Integer> {
      */
     Cliente findByCorreo(String correo);
 
-
     @Query("select c from Cliente c where c.correo= :correo and c.password= :password")
     Cliente comprobarAutenticacion(String correo, String password);
 
@@ -29,10 +28,6 @@ public interface ClienteRepo extends JpaRepository<Cliente, Integer> {
     @Query("select c from Cliente c where c.estado= :estado")
     List<Cliente> obtenerPorEstado(boolean estado, Pageable paginador);
 
-    /*
-    Elabore un query que dado el email de un usuario, permita obtener la lista de sus compras. De igual
-    forma elabore un método Test que permita probar la consulta.
-     */
 }
 
 

@@ -26,7 +26,7 @@ public class ClienteTest {
     @Test
     @Sql("classpath:dataset.sql")
     public void registrar(){
-        Cliente cliente = new Cliente("pepito", "pepe@gmail.com", "ruta", "12344");
+        Cliente cliente = new Cliente( "pepito", "pepe@gmail.com", "ruta", "12344",1094927538);
         Cliente guardado = clienteRepo.save(cliente);
         Assertions.assertNotNull(guardado);
     }

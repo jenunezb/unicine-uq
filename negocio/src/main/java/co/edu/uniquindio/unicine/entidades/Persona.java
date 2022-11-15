@@ -15,7 +15,6 @@ import java.io.Serializable;
 public class Persona implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cedula;
 
     @Column(length = 100, nullable = false)

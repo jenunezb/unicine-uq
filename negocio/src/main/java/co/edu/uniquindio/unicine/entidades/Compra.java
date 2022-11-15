@@ -50,7 +50,6 @@ public class Compra implements Serializable {
     private List<CompraConfiteria> compra_confiteria;
 
     @Builder
-
     public Compra(MedioPago medioPago, double valorTotal, Cliente cliente, List<Entrada> entrada, CuponCliente cupon_cliente, Funcion funcion, List<CompraConfiteria> compra_confiteria) {
         this.medioPago = medioPago;
         this.valorTotal = valorTotal;
