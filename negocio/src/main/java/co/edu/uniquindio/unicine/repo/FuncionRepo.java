@@ -1,10 +1,13 @@
 package co.edu.uniquindio.unicine.repo;
 
+import co.edu.uniquindio.unicine.dto.FuncionDTO;
 import co.edu.uniquindio.unicine.entidades.Funcion;
 import org.hibernate.annotations.SqlFragmentAlias;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface FuncionRepo extends JpaRepository<Funcion, Integer> {
@@ -14,4 +17,11 @@ public interface FuncionRepo extends JpaRepository<Funcion, Integer> {
    */
     @Query("select f.pelicula.nombre from Funcion f where f.codigo=:codigoFuncion")
     String obtenerNombrePelicula(Integer codigoFuncion);
+
+    /*
+    Elabore un query que retorne la lista de las funciones de una película. Debe retornar el nombre de
+    la película, el estado, la imagen, el número de la sala, la dirección del teatro, la ciudad y el horario.
+     */
+    @Query("select new co.edu.uniquindio.unicine.dto.FuncionDTO( f.pelicula.nombre, f.pelicula.estado, f.pelicula.imagen, f.sala.codigo, f.sala.teatro.direccion, f.sala.teatro.ciudad.nombre, f.horario ) from Funcion f where f.pelicula.nombre=:nombrePelicula")
+    List<FuncionDTO> listarFunciones(String nombrePelicula);
 }

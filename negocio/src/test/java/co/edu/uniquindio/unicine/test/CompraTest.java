@@ -57,4 +57,11 @@ public class CompraTest {
         List<Compra> lista = compraRepo.findAll();
         lista.forEach(System.out::println);
     }
+
+    @Test
+    @Sql("classpath:dataset.sql")
+    public void listarporCorreoEspecifico(){
+        List<Compra> listaPorCorreo = compraRepo.listar("kph@gmail.com");
+        listaPorCorreo.forEach(System.out::println);
+    }
 }

@@ -28,6 +28,30 @@ insert into administrador_teatro values (3, "esteban@gmail.com");
 insert into administrador_teatro values (4, "nunez@gmail.com");
 insert into administrador_teatro values (5, "bejarano@gmail.com");
 
+insert into pelicula values (1, "estado", "ACCION", "imagen_url", "La vida es bella","reparto", "sinopsis","url_trailer");
+insert into pelicula values (2, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (3, "estado", "ACCION", "imagen_url", "Naruto Shipuden","reparto", "sinopsis","url_trailer");
+insert into pelicula values (4, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (5, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+
+insert into teatro values (1, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);
+insert into teatro values (2, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 2);
+insert into teatro values (3, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 4);
+insert into teatro values (4, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);
+insert into teatro values (5, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 5);
+
+insert into distribucion_sillas values (1, 20,"esquema y", 20, 70 );
+insert into distribucion_sillas values (2, 40,"esquema x", 20, 70 );
+insert into distribucion_sillas values (3, 30,"esquema t", 20, 70 );
+insert into distribucion_sillas values (4, 56,"esquema r", 20, 70 );
+insert into distribucion_sillas values (5, 54,"esquema d", 20, 70 );
+
+insert into sala values (1, "sala multiple", 2, 5);
+insert into sala values (2, "sala simple", 3, 4);
+insert into sala values (3, "sala 3d", 1, 2);
+insert into sala values (4, "sala Mega", 4, 3);
+insert into sala values (5, "sala doble", 2, 3);
+
 insert into entrada values (1, 1, 2, 7000, null);
 insert into entrada values (2, 1, 3, 7000, null);
 insert into entrada values (3, 1, 4, 7000, null);
@@ -40,17 +64,24 @@ insert into cupon values (3, " el criterio es tal", "la descripcion es x", 0.2, 
 insert into cupon values (4, " el criterio es tal", "la descripcion es x", 0.5, '2022/12/19');
 insert into cupon values (5, " el criterio es tal", "la descripcion es x", 0.4, '2022/05/26');
 
-insert into pelicula values (1, "estado", "ACCION", "imagen_url", "La vida es bella","reparto", "sinopsis","url_trailer");
-insert into pelicula values (2, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (3, "estado", "ACCION", "imagen_url", "Naruto Shipuden","reparto", "sinopsis","url_trailer");
-insert into pelicula values (4, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (5, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-
-insert into funcion values (1, 3400, null, 3, null);
-insert into funcion values (2, 7400, null, 2, null);
-insert into funcion values (3, 13400, null, 1, null);
-insert into funcion values (4, 15400, null, 4, null);
-insert into funcion values (5, 2500, null, 5, null);
+insert into horario values (1, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
+insert into horario values (2, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
+insert into horario values (3, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
+insert into horario values (4, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
+insert into horario values (5, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
+/*
+    Inserto funciones en el siguiente orden
+    Codigo de funcion
+    Precio de la funcion
+    Horario codigo
+    Pelicula codigo
+    Sala código
+ */
+insert into funcion values (1, 3400, 1, 3, 2);
+insert into funcion values (2, 7400, 2, 2, 3);
+insert into funcion values (3, 13400, 3, 1, 4);
+insert into funcion values (4, 15400, 3, 4, 4);
+insert into funcion values (5, 2500, 4, 5, 1);
 
 /*
     Inserto compras en el siguiente orden
@@ -73,22 +104,6 @@ insert into confiteria values (3, "crispetas pequeñas", 12500, "url_imagen");
 insert into confiteria values (4, "chocolatina pequeña", 3000, "url_imagen");
 insert into confiteria values (5, "paquete de papas grande", 12500, "url_imagen");
 
-insert into distribucion_sillas values (1, 20,"esquema y", 20, 70 );
-insert into distribucion_sillas values (2, 40,"esquema x", 20, 70 );
-insert into distribucion_sillas values (3, 30,"esquema t", 20, 70 );
-insert into distribucion_sillas values (4, 56,"esquema r", 20, 70 );
-insert into distribucion_sillas values (5, 54,"esquema d", 20, 70 );
 
-insert into horario values (1, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
-insert into horario values (2, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
-insert into horario values (3, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
-insert into horario values (4, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
-insert into horario values (5, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-09', '2001-12-25 00:00:00.000');
-
-insert into teatro values (1, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);
-insert into teatro values (2, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 2);
-insert into teatro values (3, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 4);
-insert into teatro values (4, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);
-insert into teatro values (5, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 5);
 
 
