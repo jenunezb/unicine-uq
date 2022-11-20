@@ -18,7 +18,7 @@ public class Administrador extends Persona implements Serializable {
     @Column(nullable = false,length = 100, unique = true)
     String correo;
 
-    @Builder
+
     public Administrador(Integer cedula, String nombre, String correo) {
         super(cedula, nombre);
         this.correo = correo;

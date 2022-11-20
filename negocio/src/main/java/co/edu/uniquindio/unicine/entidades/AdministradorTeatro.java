@@ -29,7 +29,7 @@ public class AdministradorTeatro extends Persona implements Serializable {
     @OneToMany(mappedBy = "administrador_teatro")
     private List<Teatro> teatro;
 
-    @Builder
+
     public AdministradorTeatro(Integer cedula, String nombre, String correo, List<Teatro> teatro) {
         super(cedula, nombre);
         this.correo = correo;

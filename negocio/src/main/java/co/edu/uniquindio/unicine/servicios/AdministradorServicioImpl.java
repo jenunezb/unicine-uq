@@ -1,26 +1,25 @@
 package co.edu.uniquindio.unicine.servicios;
 
 import co.edu.uniquindio.unicine.entidades.*;
-import co.edu.uniquindio.unicine.repo.CiudadRepo;
-import co.edu.uniquindio.unicine.repo.ConfiteriaRepo;
-import co.edu.uniquindio.unicine.repo.CuponRepo;
-import co.edu.uniquindio.unicine.repo.PeliculaRepo;
+import co.edu.uniquindio.unicine.repo.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-
 @Service
 public class AdministradorServicioImpl implements AdministradorServicio{
 
-    private final AdministradorTeatro administradorTeatro;
+  //  private final AdministradorTeatro administradorTeatro;
+    private final AdministradorRepo administradorRepo;
     private final PeliculaRepo peliculaRepo;
     private final CuponRepo cuponRepo;
     private final CiudadRepo ciudadRepo;
 
-    public AdministradorServicioImpl(AdministradorTeatro administradorTeatro, PeliculaRepo peliculaRepo, CuponRepo cuponRepo, CiudadRepo ciudadRepo, ConfiteriaRepo confiteriaRepo) {
-        this.administradorTeatro = administradorTeatro;
+    @Autowired
+    public AdministradorServicioImpl(AdministradorRepo administradorRepo, PeliculaRepo peliculaRepo, CuponRepo cuponRepo, CiudadRepo ciudadRepo, ConfiteriaRepo confiteriaRepo) {
+        this.administradorRepo = administradorRepo;
         this.peliculaRepo = peliculaRepo;
         this.cuponRepo = cuponRepo;
         this.ciudadRepo = ciudadRepo;
