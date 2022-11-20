@@ -3,6 +3,7 @@ package co.edu.uniquindio.unicine.servicios;
 import co.edu.uniquindio.unicine.entidades.Cliente;
 import co.edu.uniquindio.unicine.entidades.Compra;
 import co.edu.uniquindio.unicine.entidades.MedioPago;
+import co.edu.uniquindio.unicine.entidades.Pelicula;
 import co.edu.uniquindio.unicine.repo.ClienteRepo;
 import co.edu.uniquindio.unicine.repo.CompraRepo;
 import org.springframework.stereotype.Service;
@@ -14,11 +15,13 @@ import java.util.Optional;
 public class ClienteServicioImpl implements ClienteServicio {
 
 
-    private ClienteRepo clienteRepo;
-    private CompraRepo compraRepo;
+    private final ClienteRepo clienteRepo;
+    private final EmailServicio emailServicio;
 
-    public ClienteServicioImpl(ClienteRepo clienteRepo) {
+    public ClienteServicioImpl(ClienteRepo clienteRepo, EmailServicio emailServicio) {
+
         this.clienteRepo = clienteRepo;
+        this.emailServicio = emailServicio;
     }
 
     @Override
@@ -31,10 +34,22 @@ public class ClienteServicioImpl implements ClienteServicio {
     }
 
     @Override
+    public Cliente obtenerCliente(Integer codigoCliente) throws Exception {
+        Optional<Cliente> guardado = clienteRepo.findById(codigoCliente);
+
+        if(guardado.isEmpty()){
+            throw new Exception("El cliente no existe");
+        }
+        return guardado.get();
+    }
+
+    @Override
     public Cliente registrarCliente(Cliente cliente)throws Exception {
-
-        validarCorreoRepetido(cliente.getCorreo());
-
+        boolean correoExiste = validarCorreoRepetido(cliente.getCorreo());
+        if (correoExiste){
+            throw new  Exception("El correo ta está en uso");
+        }
+        emailServicio.enviarEmail("Registro en Unicine", "Hola debe de ir al siguiente enlace para activar la cuenta", cliente.getCorreo());
         return clienteRepo.save(cliente);
     }
 
@@ -81,8 +96,13 @@ public class ClienteServicioImpl implements ClienteServicio {
     }
 
     @Override
-    public Compra registrarCompra(Compra compra) {
-        return compraRepo.save(compra);
+    public Compra registrarCompra(Compra compra) throws  Exception{
+ /*
+ TODO implementar todo
+  */
+        emailServicio.enviarEmail("Se ha realizado una compra", "Hola ha comprado X entradas" +
+                "para ver la película X .....", compra.getCliente().getCorreo());
+        return null;
     }
 
     @Override
@@ -97,5 +117,15 @@ public class ClienteServicioImpl implements ClienteServicio {
             throw new Exception("El cliente no existe");
         }
         return guardado;
+    }
+
+    @Override
+    public List<Pelicula> listarPeliculas(String nombre) throws Exception {
+        return null;
+    }
+
+    @Override
+    public boolean cambiarPassword(Integer codigoCliente) throws Exception {
+        return false;
     }
 }

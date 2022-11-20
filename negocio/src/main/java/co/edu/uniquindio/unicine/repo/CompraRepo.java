@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface CompraRepo extends JpaRepository<Compra, Integer> {
+
     @Query("select c from Compra c where c.cliente.correo=:correo")
     List<Compra> listar(String correo);
+
 }

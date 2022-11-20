@@ -62,16 +62,18 @@ public class FuncionTest {
       Elabore un query que dado el ID de una función devuelva el nombre de la película que tiene
       asociada. Escriba un método de tipo test para probar dicha consulta.
        */
-    @Test
+   /** @Test
     @Sql("classpath:dataset.sql")
     public void obtenerFuncionPeliculaNombre(){
        String nombrePelicula = funcionRepo.obtenerNombrePelicula(3);
        Assertions.assertEquals("La vida es bella", nombrePelicula);
     }
+
     @Test
     @Sql("classpath:dataset.sql")
     public void obtenerFunciones(){
         List<FuncionDTO> funciones = funcionRepo.listarFunciones("Naruto Shipuden");
         funciones.forEach(System.out::println);
     }
+    **/
 }

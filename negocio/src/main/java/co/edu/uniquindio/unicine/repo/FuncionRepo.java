@@ -15,8 +15,6 @@ public interface FuncionRepo extends JpaRepository<Funcion, Integer> {
   Elabore un query que dado el ID de una función devuelva el nombre de la película que tiene
   asociada. Escriba un método de tipo test para probar dicha consulta.
    */
-    @Query("select f.pelicula.nombre from Funcion f where f.codigo=:codigoFuncion")
-    String obtenerNombrePelicula(Integer codigoFuncion);
 
     /*
     Elabore un query que retorne la lista de las funciones de una película. Debe retornar el nombre de

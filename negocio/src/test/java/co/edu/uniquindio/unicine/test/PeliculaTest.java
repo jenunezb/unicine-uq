@@ -23,7 +23,7 @@ public class PeliculaTest {
     @Sql("classpath:dataset.sql")
     public void registrar() {
         Pelicula pelicula = new Pelicula("Eterno resplandor de una mente sin recuerdo", "sinopsis", "url_trailer",
-                "url_imagen", "Estado", "reparto", Genero.ACCION);
+                "url_imagen", true, "reparto",null);
         Pelicula guardado = peliculaRepo.save(pelicula);
         Assertions.assertNotNull(guardado);
     }
