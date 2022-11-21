@@ -22,6 +22,7 @@ public class Pelicula implements Serializable {
     @Column(length = 100, nullable = false)
     private String nombre;
 
+    @Lob
     @Column( nullable = false)
     private String sinopsis;
 
@@ -32,6 +33,8 @@ public class Pelicula implements Serializable {
     @Column(nullable = false)
     private boolean estado;
 
+    @Lob
+    @Column(nullable = false)
     private String reparto;
 
     @Enumerated(EnumType.STRING)

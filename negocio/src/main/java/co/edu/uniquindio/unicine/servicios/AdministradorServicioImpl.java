@@ -48,8 +48,8 @@ public class AdministradorServicioImpl implements AdministradorServicio{
     }
 
     @Override
-    public Pelicula actualizarPelicula(Pelicula pelicula) throws Exception {
-        return null;
+    public Pelicula actualizarPelicula(Pelicula pelicula) {
+        return  peliculaRepo.save(pelicula);
     }
 
     @Override
