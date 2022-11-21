@@ -1,8 +1,6 @@
 package co.edu.uniquindio.unicine.test;
 
 import co.edu.uniquindio.unicine.entidades.Cliente;
-import co.edu.uniquindio.unicine.entidades.Compra;
-import co.edu.uniquindio.unicine.entidades.MedioPago;
 import co.edu.uniquindio.unicine.servicios.ClienteServicio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -24,11 +22,12 @@ public class ClienteServicioTest {
     @Test
     @Sql("classpath:dataset.sql")
     public void registrarClienteTest(){
-        Cliente cliente = Cliente.builder().nombre("Julian Esteban").password("123").correo("julian2@gmail.com").foto_url("urlfoto").cedula(1094927538).build();
+        Cliente cliente = Cliente.builder().nombre("Julian Esteban").password("123").correo("julian1@gmail.com").foto_url("urlfoto").cedula(1).build();
         try {
+            validarClienteRepetidoTest();
             Cliente nuevo = clienteServicio.registrarCliente(cliente);
-            System.out.println(nuevo);
             Assertions.assertNotNull(nuevo);
+            listarClientesTest();
         } catch (Exception e) {
             Assertions.assertTrue(false);
         }
@@ -42,7 +41,7 @@ public class ClienteServicioTest {
     @Test
     @Sql("classpath:dataset.sql")
     public void validarClienteRepetidoTest(){
-      String correoEnviado = "julian@gmail.com";
+      String correoEnviado = "julian1@gmail.com";
         try {
             clienteServicio.validarCorreoRepetido(correoEnviado);
         } catch (Exception e) {
@@ -52,7 +51,7 @@ public class ClienteServicioTest {
     @Test
     @Sql("classpath:dataset.sql")
     public void modificarClienteTest(){
-        Cliente cliente = Cliente.builder().nombre("Julian Esteban").password("123").correo("julian@gmail.com").foto_url("urlfoto").cedula(1).build();
+        Cliente cliente = Cliente.builder().nombre("Julian Esteban").password("123").correo("julian@gmail.com").foto_url("urlfoto").cedula(9).build();
         try {
             clienteServicio.actualizarCliente(cliente);
         } catch (Exception e) {
@@ -62,7 +61,7 @@ public class ClienteServicioTest {
     @Test
     @Sql("classpath:dataset.sql")
     public void eliminarClienteTest(){
-        Cliente cliente = Cliente.builder().nombre("Julian Esteban").password("123").correo("julian@gmail.com").foto_url("urlfoto").cedula(1).build();
+        Cliente cliente = Cliente.builder().nombre("Julian Esteban").password("123").correo("julian@gmail.com").foto_url("urlfoto").cedula(9).build();
         try {
             clienteServicio.eliminarCliente(cliente.getCedula());
             Assertions.assertNull(cliente);
@@ -96,5 +95,4 @@ public class ClienteServicioTest {
             throw new RuntimeException(e);
         }
         */
-
 }

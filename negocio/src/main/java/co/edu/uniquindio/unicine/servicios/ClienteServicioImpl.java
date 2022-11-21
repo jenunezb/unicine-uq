@@ -2,10 +2,8 @@ package co.edu.uniquindio.unicine.servicios;
 
 import co.edu.uniquindio.unicine.entidades.Cliente;
 import co.edu.uniquindio.unicine.entidades.Compra;
-import co.edu.uniquindio.unicine.entidades.MedioPago;
 import co.edu.uniquindio.unicine.entidades.Pelicula;
 import co.edu.uniquindio.unicine.repo.ClienteRepo;
-import co.edu.uniquindio.unicine.repo.CompraRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,12 +43,14 @@ public class ClienteServicioImpl implements ClienteServicio {
 
     @Override
     public Cliente registrarCliente(Cliente cliente)throws Exception {
-        boolean correoExiste = validarCorreoRepetido(cliente.getCorreo());
-        if (correoExiste){
-            throw new  Exception("El correo ta está en uso");
+
+        validarCorreoRepetido(cliente.getCorreo());
+
+        if(clienteRepo.findById(cliente.getCedula()).isEmpty()){
+           // emailServicio.enviarEmail("Registro en Unicine", "Hola debe de ir al siguiente enlace para activar la cuenta", cliente.getCorreo());
+            return clienteRepo.save(cliente);
         }
-        emailServicio.enviarEmail("Registro en Unicine", "Hola debe de ir al siguiente enlace para activar la cuenta", cliente.getCorreo());
-        return clienteRepo.save(cliente);
+            throw new Exception("El cliente ya fue registrado con anterioridad");
     }
 
     @Override
@@ -59,11 +59,7 @@ public class ClienteServicioImpl implements ClienteServicio {
         if(aComparar==null){
             return true;
         }
-        String correoAcomparar = aComparar.getCorreo();
-        if(correo.equals(correoAcomparar)){
-            throw new Exception("El correo ingresado ya fue registrado");
-        }
-         return true;
+            throw new Exception("El correo ya está en uso");
     }
 
     @Override

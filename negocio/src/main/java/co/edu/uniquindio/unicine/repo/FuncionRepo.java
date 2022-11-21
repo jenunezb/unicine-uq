@@ -1,13 +1,8 @@
 package co.edu.uniquindio.unicine.repo;
 
-import co.edu.uniquindio.unicine.dto.FuncionDTO;
 import co.edu.uniquindio.unicine.entidades.Funcion;
-import org.hibernate.annotations.SqlFragmentAlias;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface FuncionRepo extends JpaRepository<Funcion, Integer> {

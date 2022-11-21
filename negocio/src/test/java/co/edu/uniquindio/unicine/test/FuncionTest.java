@@ -1,7 +1,5 @@
 package co.edu.uniquindio.unicine.test;
-import co.edu.uniquindio.unicine.dto.FuncionDTO;
 import co.edu.uniquindio.unicine.entidades.Funcion;
-import co.edu.uniquindio.unicine.entidades.Pelicula;
 import co.edu.uniquindio.unicine.repo.FuncionRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

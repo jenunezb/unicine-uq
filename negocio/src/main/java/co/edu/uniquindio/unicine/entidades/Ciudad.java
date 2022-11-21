@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,6 +19,7 @@ public class Ciudad implements Serializable {
     @EqualsAndHashCode.Include
     private Integer codigo;
 
+    @Length(max = 100)
     @Column(length = 100, nullable = false)
     private String nombre;
 

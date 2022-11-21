@@ -3,7 +3,6 @@ package co.edu.uniquindio.unicine.entidades;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 import java.io.Serializable;
 

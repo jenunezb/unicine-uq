@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ public class Administrador extends Persona implements Serializable {
 
     @Email
     @Column(nullable = false,length = 100, unique = true)
+    @Length(max = 100)
     String correo;
 
 

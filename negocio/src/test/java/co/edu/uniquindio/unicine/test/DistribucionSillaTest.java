@@ -1,6 +1,5 @@
 package co.edu.uniquindio.unicine.test;
 
-import co.edu.uniquindio.unicine.entidades.Cupon;
 import co.edu.uniquindio.unicine.entidades.DistribucionSillas;
 import co.edu.uniquindio.unicine.repo.DistribucionSillasRepo;
 import org.junit.jupiter.api.Assertions;
@@ -10,7 +9,6 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 

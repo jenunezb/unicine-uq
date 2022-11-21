@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -22,23 +23,26 @@ public class Cliente implements Serializable {
     @NotNull
     private Integer cedula;
 
+    @Length(max = 100)
     @Column(length = 100, nullable = false)
     private String nombre;
 
     @NotNull
     @Column(length = 150, nullable = false, unique = true)
+    @Length(max = 150)
     @Email
     private String correo;
 
     @Column(nullable = false)
-    private String foto_url;
+    private String foto_url="";
 
     @ToString.Exclude
     @Column(length = 100, nullable = false)
+    @Length(max = 100)
     private String password;
 
     @Column(nullable = false)
-    private boolean estado;
+    private boolean estado=false;
 
     @ElementCollection
     private Map <String, String> telefono;
@@ -59,6 +63,6 @@ public class Cliente implements Serializable {
         this.foto_url = foto_url;
         this.password = password;
         this.estado = false;
-        this.cedula=cedula;
+        this.cedula = cedula;
     }
 }

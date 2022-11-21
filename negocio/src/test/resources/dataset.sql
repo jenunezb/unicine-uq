@@ -29,11 +29,12 @@ insert into administrador_teatro values (3,"Esteban", "esteban@gmail.com");
 insert into administrador_teatro values (4,"Nuñez", "nunez@gmail.com");
 insert into administrador_teatro values (5,"Bejarano", "bejarano@gmail.com");
 
-insert into pelicula values (1, "estado", "ACCION", "imagen_url", "La vida es bella","reparto", "sinopsis","url_trailer");
-insert into pelicula values (2, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (3, "estado", "ACCION", "imagen_url", "Naruto Shipuden","reparto", "sinopsis","url_trailer");
-insert into pelicula values (4, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (5, "estado", "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+/**insert into pelicula values (1, false, "ACCION", "imagen_url", "La vida es bella","reparto", "sinopsis","url_trailer");
+insert into pelicula values (2, false, "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (3, false, "ACCION", "imagen_url", "Naruto Shipuden","reparto", "sinopsis","url_trailer");
+insert into pelicula values (4, false, "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (5, false, "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+ */
 
 insert into teatro values (1, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);
 insert into teatro values (2, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 2);
@@ -78,11 +79,14 @@ insert into horario values (5, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-
     Pelicula codigo
     Sala código
  */
+
+ /*
 insert into funcion values (1, 3400, 1, 3, 2);
 insert into funcion values (2, 7400, 2, 2, 3);
 insert into funcion values (3, 13400, 3, 1, 4);
 insert into funcion values (4, 15400, 3, 4, 4);
 insert into funcion values (5, 2500, 4, 5, 1);
+*/
 
 /*
     Inserto compras en el siguiente orden

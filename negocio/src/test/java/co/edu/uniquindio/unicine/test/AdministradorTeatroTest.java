@@ -1,8 +1,6 @@
 package co.edu.uniquindio.unicine.test;
 
 import co.edu.uniquindio.unicine.entidades.AdministradorTeatro;
-import co.edu.uniquindio.unicine.entidades.AdministradorTeatro;
-import co.edu.uniquindio.unicine.entidades.Cliente;
 import co.edu.uniquindio.unicine.repo.AdministradorTeatroRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

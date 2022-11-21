@@ -1,6 +1,7 @@
 package co.edu.uniquindio.unicine.entidades;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -21,6 +22,7 @@ public class AdministradorTeatro extends Persona implements Serializable {
     private Integer cedula;
 
     @Email
+    @Length(max = 100)
     @Column(nullable = false,length = 100, unique = true)
     String correo;
 

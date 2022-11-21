@@ -1,7 +1,6 @@
 package co.edu.uniquindio.unicine.test;
 
 import co.edu.uniquindio.unicine.entidades.Cliente;
-import co.edu.uniquindio.unicine.entidades.Compra;
 import co.edu.uniquindio.unicine.repo.ClienteRepo;
 import co.edu.uniquindio.unicine.repo.CompraRepo;
 import org.junit.jupiter.api.Assertions;
@@ -9,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
@@ -20,13 +18,11 @@ import java.util.Optional;
 public class ClienteTest {
     @Autowired
     private ClienteRepo clienteRepo;
-    @Autowired
-    private CompraRepo compraRepo;
 
     @Test
     @Sql("classpath:dataset.sql")
     public void registrar(){
-        Cliente cliente = new Cliente( "pepito", "pepe@gmail.com", "ruta", "12344",1094927538);
+        Cliente cliente = new Cliente( "pepito", "julijan@gmail.com", "ruta","pass",5);
         Cliente guardado = clienteRepo.save(cliente);
         Assertions.assertNotNull(guardado);
     }

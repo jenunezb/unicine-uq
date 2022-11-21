@@ -1,7 +1,5 @@
 package co.edu.uniquindio.unicine.test;
 
-import co.edu.uniquindio.unicine.entidades.Genero;
-import co.edu.uniquindio.unicine.entidades.Horario;
 import co.edu.uniquindio.unicine.entidades.Pelicula;
 import co.edu.uniquindio.unicine.repo.PeliculaRepo;
 import org.junit.jupiter.api.Assertions;
