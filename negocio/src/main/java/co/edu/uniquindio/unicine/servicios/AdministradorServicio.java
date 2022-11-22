@@ -9,6 +9,8 @@ public interface AdministradorServicio {
 
  Ciudad crearCiudad(Ciudad ciudad);
 
+List<Ciudad> listarCiudades();
+
  Ciudad obtenerCiudad(Integer codigo)throws Exception;
 
  Pelicula crearPelicula(Pelicula pelicula);
@@ -17,7 +19,7 @@ public interface AdministradorServicio {
 
  void eliminarPelicula(Integer codigo)throws Exception;
 
- List<Pelicula> listarPeliculas();
+ List<Pelicula> listarPeliculas(String nombre);
 
  Pelicula obtenerPelicula(Integer codigo) throws Exception;
 
@@ -49,6 +51,5 @@ public interface AdministradorServicio {
 
  List<AdministradorTeatro> listarAdminsTeatros();
 
- AdministradorTeatro obtenerAdminTeatro (Integer codigo) throws Exception;
 
 }

@@ -9,7 +9,6 @@ insert into cliente_telefono values(1, "oficina", "3013066787");
 insert into cliente_telefono values(2, "oficina", "3013066784");
 insert into cliente_telefono values(3, "oficina", "3013066785");
 
-insert into ciudad values (1,"Armenia");
 insert into ciudad values (2,"Calarca");
 insert into ciudad values (3,"Quimbaya");
 insert into ciudad values (4,"Montenegro");
@@ -21,6 +20,7 @@ insert into ciudad values (9,"Filandia");
 insert into ciudad values (10,"Cordoba");
 insert into ciudad values (11,"Circasia");
 insert into ciudad values (12,"Tebaida");
+
 
 
 insert into administrador_teatro values (1,"Isabela", "isabella@gmail.com");
@@ -80,7 +80,7 @@ insert into horario values (5, '2022-11-09', '2001-12-25 00:00:00.000','2022-11-
     Sala código
  */
 
- /*
+/*
 insert into funcion values (1, 3400, 1, 3, 2);
 insert into funcion values (2, 7400, 2, 2, 3);
 insert into funcion values (3, 13400, 3, 1, 4);

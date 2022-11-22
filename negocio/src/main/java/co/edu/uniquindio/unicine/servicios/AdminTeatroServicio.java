@@ -1,9 +1,6 @@
 package co.edu.uniquindio.unicine.servicios;
 
-import co.edu.uniquindio.unicine.entidades.Funcion;
-import co.edu.uniquindio.unicine.entidades.Horario;
-import co.edu.uniquindio.unicine.entidades.Sala;
-import co.edu.uniquindio.unicine.entidades.Teatro;
+import co.edu.uniquindio.unicine.entidades.*;
 
 import java.util.List;
 
@@ -45,6 +42,6 @@ public interface AdminTeatroServicio {
 
     List<Teatro> listarTeatros();
 
-
+    AdministradorTeatro obtenerAdminTeatro( Integer codigo);
 
 }

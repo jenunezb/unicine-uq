@@ -30,18 +30,16 @@ public class PeliculaBean implements Serializable {
         pelicula = new Pelicula();
     }
 
-    public void crearPelicula(){
+    public String crearPelicula(){
         try{
             pelicula.setEstado(true);
             administradorServicio.crearPelicula(pelicula);
-
-            FacesMessage fm = new FacesMessage( FacesMessage.SEVERITY_INFO, "Alerta", "Se ha creado la película correctamente");
-            FacesContext.getCurrentInstance().addMessage("mensaje_bean", fm);
+            return "/admin/pelicula_creada?faces-redirect=true";
 
         }catch (Exception e){
             FacesMessage fm = new FacesMessage( FacesMessage.SEVERITY_ERROR, "Alerta", e.getMessage());
             FacesContext.getCurrentInstance().addMessage("mensaje_bean", fm);
         }
-
+        return "";
     }
 }

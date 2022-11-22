@@ -30,7 +30,12 @@ public class AdministradorServicioImpl implements AdministradorServicio{
 
     @Override
     public Ciudad crearCiudad(Ciudad ciudad) {
-       return ciudadRepo.save(ciudad);
+        return ciudadRepo.save(ciudad);
+    }
+
+    @Override
+    public List<Ciudad> listarCiudades() {
+        return ciudadRepo.findAll();
     }
 
     @Override
@@ -44,12 +49,13 @@ public class AdministradorServicioImpl implements AdministradorServicio{
 
     @Override
     public Pelicula crearPelicula(Pelicula pelicula) {
-        return null;
+
+        return  peliculaRepo.save(pelicula);
     }
 
     @Override
     public Pelicula actualizarPelicula(Pelicula pelicula) {
-        return  peliculaRepo.save(pelicula);
+        return null;
     }
 
     @Override
@@ -58,8 +64,9 @@ public class AdministradorServicioImpl implements AdministradorServicio{
     }
 
     @Override
-    public List<Pelicula> listarPeliculas() {
-        return null;
+    public List<Pelicula> listarPeliculas(String nombre) {
+        List<Pelicula> guardada= peliculaRepo.buscarPelicula(nombre);
+        return guardada;
     }
 
     @Override
@@ -137,8 +144,4 @@ public class AdministradorServicioImpl implements AdministradorServicio{
         return null;
     }
 
-    @Override
-    public AdministradorTeatro obtenerAdminTeatro(Integer codigo) throws Exception {
-        return null;
-    }
 }

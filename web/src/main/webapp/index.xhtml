@@ -9,17 +9,64 @@
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <h:outputStylesheet name="bootstrap.min.css" library="css"/>
+    <h:outputScript name="bootstrap.bundle.min.js" library="js"/>
+    <h:outputStylesheet name="styles.css" library="css"/>
     <title>Página de Inicio</title>
 </h:head>
 <h:body>
-            <h1>Página de inicio</h1>
 
-    <div id="barra_nav">
-        <ul>
-            <li><a href="/admin_teatro/crear_pelicula.xhtml">Crear película</a> </li>
-            <li><a href="/cliente/registro.xhtml">Registrar Cliente</a> </li>
-        </ul>
+    <nav class="iniciar-sesion">
+        <p:linkButton value="Registrarse" href="/cliente/registro.xhtml" />
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.xhtml">Unicine</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin_teatro/crear_teatro.xhtml">Crear Teatro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/crear_pelicula.xhtml">Crear película</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Link
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Link</a>
+                    </li>
+                </ul>
+                <h:form class="d-flex" role="search">
+                    <p:inputText   placeholder="¿Qué película está buscando?" styleClass="form_busqueda"
+                           aria-label="Search" required="true" value="#{busquedaBean.busqueda}"/>
+                    <p:commandButton class="btn btn-outline-success" pdate="@form" icon="pi pi-search"
+                    action="#{busquedaBean.buscar}"/>
+                </h:form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>En cartelera</h1>
+        <div>
+
+        </div>
+        <h1>Proximamente</h1>
+        <div>
+
+        </div>
 
     </div>
+    <h:graphicImage styleClass="img-icon me-2" library="img" name="4363530.png"/>
 </h:body>
 </html>

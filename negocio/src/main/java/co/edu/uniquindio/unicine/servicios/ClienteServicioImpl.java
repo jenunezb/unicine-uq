@@ -4,6 +4,7 @@ import co.edu.uniquindio.unicine.entidades.Cliente;
 import co.edu.uniquindio.unicine.entidades.Compra;
 import co.edu.uniquindio.unicine.entidades.Pelicula;
 import co.edu.uniquindio.unicine.repo.ClienteRepo;
+import co.edu.uniquindio.unicine.repo.PeliculaRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,11 +16,13 @@ public class ClienteServicioImpl implements ClienteServicio {
 
     private final ClienteRepo clienteRepo;
     private final EmailServicio emailServicio;
+    private final PeliculaRepo peliculaRepo;
 
-    public ClienteServicioImpl(ClienteRepo clienteRepo, EmailServicio emailServicio) {
+    public ClienteServicioImpl(ClienteRepo clienteRepo, EmailServicio emailServicio, PeliculaRepo peliculaRepo) {
 
         this.clienteRepo = clienteRepo;
         this.emailServicio = emailServicio;
+        this.peliculaRepo = peliculaRepo;
     }
 
     @Override
@@ -47,7 +50,7 @@ public class ClienteServicioImpl implements ClienteServicio {
         validarCorreoRepetido(cliente.getCorreo());
 
         if(clienteRepo.findById(cliente.getCedula()).isEmpty()){
-           // emailServicio.enviarEmail("Registro en Unicine", "Hola debe de ir al siguiente enlace para activar la cuenta", cliente.getCorreo());
+            emailServicio.enviarEmail("Registro en Unicine", "Hola debe de ir al siguiente enlace para activar la cuenta", cliente.getCorreo());
             return clienteRepo.save(cliente);
         }
             throw new Exception("El cliente ya fue registrado con anterioridad");
@@ -116,8 +119,10 @@ public class ClienteServicioImpl implements ClienteServicio {
     }
 
     @Override
-    public List<Pelicula> listarPeliculas(String nombre) throws Exception {
-        return null;
+
+    public List<Pelicula> listarPeliculas(String nombre){
+        List<Pelicula> guardada= peliculaRepo.buscarPelicula(nombre);
+        return guardada;
     }
 
     @Override

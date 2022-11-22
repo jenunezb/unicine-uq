@@ -1,13 +1,7 @@
 package co.edu.uniquindio.unicine.servicios;
 
-import co.edu.uniquindio.unicine.entidades.Funcion;
-import co.edu.uniquindio.unicine.entidades.Horario;
-import co.edu.uniquindio.unicine.entidades.Sala;
-import co.edu.uniquindio.unicine.entidades.Teatro;
-import co.edu.uniquindio.unicine.repo.FuncionRepo;
-import co.edu.uniquindio.unicine.repo.HorarioRepo;
-import co.edu.uniquindio.unicine.repo.SalaRepo;
-import co.edu.uniquindio.unicine.repo.TeatroRepo;
+import co.edu.uniquindio.unicine.entidades.*;
+import co.edu.uniquindio.unicine.repo.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,12 +13,14 @@ public class AdminTeatroServivioImpl implements AdminTeatroServicio{
     private final FuncionRepo funcionRepo;
     private final SalaRepo salaRepo;
     private final TeatroRepo teatroRepo;
+    private final AdministradorTeatroRepo administradorTeatroRepo;
 
-    public AdminTeatroServivioImpl(HorarioRepo horarioRepo, FuncionRepo funcionRepo, SalaRepo salaRepo, TeatroRepo teatroRepo) {
+    public AdminTeatroServivioImpl(HorarioRepo horarioRepo, FuncionRepo funcionRepo, SalaRepo salaRepo, TeatroRepo teatroRepo, AdministradorTeatroRepo administradorTeatroRepo) {
         this.horarioRepo = horarioRepo;
         this.funcionRepo = funcionRepo;
         this.salaRepo = salaRepo;
         this.teatroRepo = teatroRepo;
+        this.administradorTeatroRepo = administradorTeatroRepo;
     }
 
     @Override
@@ -99,7 +95,9 @@ public class AdminTeatroServivioImpl implements AdminTeatroServicio{
 
     @Override
     public Teatro crearTeatro(Teatro teatro) {
-        return null;
+
+        return teatroRepo.save(teatro);
+
     }
 
     @Override
@@ -114,6 +112,12 @@ public class AdminTeatroServivioImpl implements AdminTeatroServicio{
 
     @Override
     public List<Teatro> listarTeatros() {
-        return null;
+        return teatroRepo.findAll();
     }
+
+    @Override
+    public AdministradorTeatro obtenerAdminTeatro(Integer codigo) {
+        return administradorTeatroRepo.getById(codigo);
+    }
+
 }

@@ -1,6 +1,8 @@
 package co.edu.uniquindio.unicine.test;
 
 import co.edu.uniquindio.unicine.entidades.Cliente;
+import co.edu.uniquindio.unicine.entidades.Genero;
+import co.edu.uniquindio.unicine.entidades.Pelicula;
 import co.edu.uniquindio.unicine.servicios.ClienteServicio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -76,6 +78,18 @@ public class ClienteServicioTest {
            Optional<Cliente> cliente = clienteServicio.buscarPorId(1);
            Assertions.assertNotNull(cliente);
         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    @Sql("classpath:dataset.sql")
+    public void buscarPeliculasTest(){
+        try {
+            List<Pelicula> peliculas = clienteServicio.listarPeliculas("avatar");
+            Assertions.assertNotNull(peliculas);
+            System.out.println(peliculas);
+        }catch (Exception e){
             throw new RuntimeException(e);
         }
     }
