@@ -34,9 +34,9 @@ public interface AdminTeatroServicio {
 
     Sala obtenerSala(Integer codigo) throws Exception;
 
-    Teatro crearTeatro(Teatro teatro);
+    Teatro crearTeatro(Teatro teatro) throws Exception;
 
-    Teatro actualizarTeatro(Integer codigo) throws Exception;
+    Teatro actualizarTeatro(Teatro teatro) throws Exception;
 
     void eliminarTeatro(Integer codigo) throws Exception;
 

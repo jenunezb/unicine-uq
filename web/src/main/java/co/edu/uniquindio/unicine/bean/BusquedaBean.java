@@ -46,7 +46,7 @@ public class BusquedaBean implements Serializable {
 
     public String buscar(){
         if(!busqueda.isEmpty()){
-            return "/resultados_busqueda?faces-redirect=true&amp;busqueda="+busquedaParam;
+            return "/resultados_busqueda?faces-redirect=true&amp;busqueda="+busqueda;
         }
    return "";
     }

@@ -21,6 +21,7 @@ public class Ciudad implements Serializable {
 
     @Length(max = 100)
     @Column(length = 100, nullable = false)
+    @NonNull
     private String nombre;
 
     @ToString.Exclude

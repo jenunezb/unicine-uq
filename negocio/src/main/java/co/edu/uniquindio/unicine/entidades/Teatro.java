@@ -29,6 +29,7 @@ public class Teatro implements Serializable {
       @ManyToOne
          private AdministradorTeatro administrador_teatro;
 
+      @NonNull
       @ManyToOne
         private Ciudad ciudad;
 

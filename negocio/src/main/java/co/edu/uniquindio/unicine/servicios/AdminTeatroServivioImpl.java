@@ -5,6 +5,7 @@ import co.edu.uniquindio.unicine.repo.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdminTeatroServivioImpl implements AdminTeatroServicio{
@@ -94,20 +95,24 @@ public class AdminTeatroServivioImpl implements AdminTeatroServicio{
     }
 
     @Override
-    public Teatro crearTeatro(Teatro teatro) {
+    public Teatro crearTeatro(Teatro teatro) throws Exception{
 
         return teatroRepo.save(teatro);
 
     }
 
     @Override
-    public Teatro actualizarTeatro(Integer codigo) throws Exception {
-        return null;
+    public Teatro actualizarTeatro(Teatro teatro) throws Exception {
+        return  teatroRepo.save(teatro);
     }
 
     @Override
     public void eliminarTeatro(Integer codigo) throws Exception {
-
+        Optional<Teatro> guardado = teatroRepo.findById(codigo);
+        if(guardado.isEmpty()){
+            throw new Exception("El teatro no existe");
+        }
+        teatroRepo.delete(guardado.get());
     }
 
     @Override
