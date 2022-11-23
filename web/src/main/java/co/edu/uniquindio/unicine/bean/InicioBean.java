@@ -43,9 +43,9 @@ public class InicioBean implements Serializable {
     public void init(){
         try {
             imagenes = new ArrayList<>();
-            imagenes.add("");
-            imagenes.add("");
-            imagenes.add("");
+            imagenes.add("fd");
+            imagenes.add("gadg");
+            imagenes.add("gdaga");
             peliculasCartelera = clienteServicio.listarPorestado(true);
             peliculasProximas = clienteServicio.listarPorestado( false);
             ciudades=administradorServicio.listarCiudades();

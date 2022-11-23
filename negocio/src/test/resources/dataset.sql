@@ -29,11 +29,11 @@ insert into administrador_teatro values (3,"Esteban", "esteban@gmail.com");
 insert into administrador_teatro values (4,"Nuñez", "nunez@gmail.com");
 insert into administrador_teatro values (5,"Bejarano", "bejarano@gmail.com");
 
-/**insert into pelicula values (1, false, "ACCION", "imagen_url", "La vida es bella","reparto", "sinopsis","url_trailer");
-insert into pelicula values (2, false, "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (3, false, "ACCION", "imagen_url", "Naruto Shipuden","reparto", "sinopsis","url_trailer");
-insert into pelicula values (4, false, "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
-insert into pelicula values (5, false, "ACCION", "imagen_url", "nombre","reparto", "sinopsis","url_trailer");
+/**insert into pelicula values (1,1, "ACCION", "La vida es bella","reparto", "sinopsis","url_trailer");
+insert into pelicula values (2, 1, "ACCION", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (3, 1, "ACCION", "Naruto Shipuden","reparto", "sinopsis","url_trailer");
+insert into pelicula values (4, 0, "ACCION", "nombre","reparto", "sinopsis","url_trailer");
+insert into pelicula values (5, 1, "ACCION", "nombre","reparto", "sinopsis","url_trailer");
  */
 
 insert into teatro values (1, " Avenida Centenario No. 6 - 380 ", "7359489", 1, 1);

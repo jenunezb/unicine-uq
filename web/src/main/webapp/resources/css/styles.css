@@ -14,11 +14,21 @@
 }
 
 .item-pelicula{
-    background: #1e2125;
+    background: #8d8888;
 }
 
 .item-carrusel{
     background: #4d5154;
+}
+
+.imagen-pelicula{
+    width: 200px;
+}
+
+.imagen-pelicula img{
+
+    width: 100%;
+    height: auto;
 }
 
 

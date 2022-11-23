@@ -13,127 +13,166 @@
     <h:outputStylesheet name="bootstrap.min.css" library="css"/>
     <h:outputScript name="bootstrap.bundle.min.js" library="js"/>
     <h:outputStylesheet name="styles.css" library="css"/>
+    <h:outputStylesheet name="carousel.css" library="css"/>
     <title>Página de Inicio</title>
 </h:head>
 <h:body>
     <nav class="iniciar-sesion ">
         <p align="right">
             <br/>
-            <p:linkButton value="Sign-in" styleClass="me-2" style="background-color: #1a1e21"/>
-            <p:linkButton value="Registrarse" href="/cliente/registro.xhtml" styleClass="me-5" style="background-color: #a52834"/>
+            <p:linkButton value="Sign-in" styleClass="me-1" style="background-color: #1a1e21"/>
+            <p:linkButton value="Registrarse" href="/cliente/registro.xhtml" styleClass="me-3" style="background-color: #a52834"/>
         </p>
     </nav>
-
-
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <h:graphicImage styleClass="img-icon me-5" library="img" name="4363530.png"/>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.xhtml">Cartelera</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin_teatro/crear_teatro.xhtml">Gestionar Teatros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/crear_pelicula.xhtml">Crear película</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Link
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Link</a>
-                    </li>
-                </ul>
-                <h:form class="d-flex" role="search">
-                    <p:inputText   placeholder="¿Qué película está buscando?" styleClass="form_busqueda"
-                           aria-label="Search" required="true" value="#{busquedaBean.busqueda}"/>
-                    <p:commandButton class="btn btn-outline-success" update="@form" icon="pi pi-search" style="background-color: #a52834"
-                    action="#{busquedaBean.buscar}"/>
-                </h:form>
+    <nav class="barra">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Example headline.</h1>
+                            <p>Some representative placeholder content for the first slide of the carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Some representative placeholder content for the second slide of the carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>One more for good measure.</h1>
+                            <p>Some representative placeholder content for the third slide of this carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+
     </nav>
 
+    <div>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <h:graphicImage styleClass="img-icon me-5" library="img" name="4363530.png"/>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.xhtml">Cartelera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin_teatro/crear_teatro.xhtml">Gestionar Teatros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/crear_pelicula.xhtml">Crear película</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Link
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Link</a>
+                        </li>
+                    </ul>
+                    <h:form class="d-flex" role="search">
+                        <p:inputText   placeholder="¿Qué película está buscando?" styleClass="form_busqueda"
+                                       aria-label="Search" required="true" value="#{busquedaBean.busqueda}"/>
+                        <p:commandButton class="btn btn-outline-success" update="@form" icon="pi pi-search" style="background-color: #a52834"
+                                         action="#{busquedaBean.buscar}"/>
+                    </h:form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <p:carousel value="" var="imagen" numVisible="1" numScroll="1">
+        <div class="item-carrusel">
+            <h1>Item #</h1>
+        </div>
+    </p:carousel>
 
     <div class="cuerpo-pagina">
 
 
-    <div jsf:id="listas_peliculas" class="container">
+        <div jsf:id="listas_peliculas" class="container">
 
-        <div>
-            <h3 class="mt-4 mb-4">En cartelera</h3>
+            <div>
+                <h3 class="mt-4 mb-4">En cartelera</h3>
 
+                    <div class="col-md-6">
+                        <a href="/detalle_pelicula.xhtml?pelicula_id=#{pelicula.codigo}" class="text-decoration-none text-primary">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
+                                <h3 class="mb-0">#{pelicula.nombre}</h3>
+                                <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
+                                <a href="#" class="stretched-link">Continue reading</a>
+                            </div>
+                            <div class="col-auto d-none d-lg-block imagen-pelicula">
+                                <img src="#{pelicula.imagenPrincipal}" alt="#{pelicula.nombre}"/>
 
-
-            <div class="row mb-2">
-                <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
-                            <h3 class="mb-0">#{pelicula.nombre}</h3>
-                            <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
-                            <a href="#" class="stretched-link">Continue reading</a>
+                            </div>
                         </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        </div>
+                        </a>
                     </div>
-                </div>
-            </div>
-            <p:repeat value="#{inicioBean.peliculasCartelera}" var="pelicula">
-                <div class="row mb-2">
-                <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
-                            <h3 class="mb-0">#{pelicula.nombre}</h3>
-                            <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
-                            <a href="#" class="stretched-link">Continue reading</a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
+                <p:repeat value="#{inicioBean.peliculasCartelera}" var="pelicula">
+                    <div class="col-md-6">
+                        <a href="/detalle_pelicula.xhtml?pelicula_id=#{pelicula.codigo}" class="text-decoration-none text-primary">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <div class="d-inline-block mb-2 text-primary">#{pelicula.generos}</div>
+                                <h3 class="mb-0">#{pelicula.nombre}</h3>
+                                <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
+                            </div>
+                            <div class="col-auto d-none d-lg-block imagen-pelicula">
+                                <img src="#{pelicula.imagenPrincipal}" alt="#{pelicula.nombre}"/>
+                            </div>
                         </div>
+                        </a>
                     </div>
-                </div>
-                </div>
-            </p:repeat>
+                </p:repeat>
 
-</div>
-
-        </div>
-
-        <hr class="mt-5"/>
-        <div>
-            <h3 class="mt-2 mb-4">Proximamente</h3>
-            <div class="row mb-2">
-                <div class="col-md-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
-                            <h3 class="mb-0">#{pelicula.nombre}</h3>
-                            <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
-                            <a href="#" class="stretched-link">Continue reading</a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <p:repeat value="#{inicioBean.peliculasProximas}" var="pelicula">
+            <hr class="mt-5"/>
+
+            <div class="preventa">
+                <h3 class="mt-4 mb-4">Proximamente</h3>
+
                 <div class="row mb-2">
                     <div class="col-md-6">
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
@@ -143,18 +182,39 @@
                                 <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
                                 <a href="#" class="stretched-link">Continue reading</a>
                             </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                            <div class="col-auto d-none d-lg-block imagen-pelicula">
+                                <img src="#{pelicula.imagenPrincipal}" alt="#{pelicula.nombre}"/>
 
                             </div>
                         </div>
                     </div>
                 </div>
-            </p:repeat>
+
+                <div class="row">
+                    <p:repeat value="#{inicioBean.peliculasProximas}" var="pelicula">
+
+                        <div class="col-md-6">
+                            <a href="/detalle_pelicula.xhtml?pelicula_id=#{pelicula.codigo}" class="text-decoration-none text-primary">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <div class="d-inline-block mb-2"><p:repeat value=" value=#{pelicula.generos}" var="genero"> </p:repeat>
+                                        <h3 class="mb-0">#{pelicula.nombre}</h3>
+                                        <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
+                                    </div>
+                                    <div class="col-auto d-none d-lg-block imagen-pelicula">
+                                        <img src="#{pelicula.imagenPrincipal}" alt="#{pelicula.nombre}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                            </div>
+                    </p:repeat>
+
+                </div>
+            </div>
+
         </div>
-
     </div>
-
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
@@ -172,29 +232,29 @@
         </footer>
     </div>
 
-<p:dialog id="dialogo_ciudad" modal="true" widgetVar="dialogo_ciudad" visible="true">
-<h:form>
+    <p:dialog id="dialogo_ciudad" modal="true" widgetVar="dialogo_ciudad" visible="true">
+        <h:form>
 
-    <h:panelGrid columns="2" cellpadding="5">
+            <h:panelGrid columns="2" cellpadding="5">
 
-        <p:outputLabel for="ciudad_origen" value="Ciudad:"/>
+                <p:outputLabel for="ciudad_origen" value="Ciudad:"/>
 
-        <p:selectOneMenu id="ciudad_origen" value="#{inicioBean.ciudad}" converter="#{ciudadConverter}">
-            <f:selectItem itemLabel="Seleccione una ciudad" noSelectionOption="true" itemValue="#{null}"/>
-            <f:selectItems value="#{teatroBean.ciudades}" var="ciudad" itemLabel="#{ciudad.nombre}" itemValue="#{ciudad}"/>
-        </p:selectOneMenu>
+                <p:selectOneMenu id="ciudad_origen" value="#{inicioBean.ciudad}" converter="#{ciudadConverter}">
+                    <f:selectItem itemLabel="Seleccione una ciudad" noSelectionOption="true" itemValue="#{null}"/>
+                    <f:selectItems value="#{teatroBean.ciudades}" var="ciudad" itemLabel="#{ciudad.nombre}" itemValue="#{ciudad}"/>
+                </p:selectOneMenu>
 
-        <p:message for="ciudad_origen"/>
+                <p:message for="ciudad_origen"/>
 
-    </h:panelGrid>
-    <p:commandButton value="Seleccionar ciudad" action="#{inicioBean.elegirCiudad()}" styleClass="mr-4" icon="pi pi-check" update="@form, listas_peliculas"
-                     oncomplete="PF('dialogo_ciudad').hide()" style="background-color: #a52834" />
-    <p:growl for="mensaje_bean" showDetail="true"/>
+            </h:panelGrid>
+            <p:commandButton value="Seleccionar ciudad" action="#{inicioBean.elegirCiudad()}" styleClass="mr-4" icon="pi pi-check" update="@form, listas_peliculas"
+                             oncomplete="PF('dialogo_ciudad').hide()" style="background-color: #a52834" />
+            <p:growl for="mensaje_bean" showDetail="true"/>
 
-</h:form>
+        </h:form>
 
 
-</p:dialog>
+    </p:dialog>
 
 
 
