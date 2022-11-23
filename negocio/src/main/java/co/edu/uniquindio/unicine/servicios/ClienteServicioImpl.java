@@ -1,9 +1,9 @@
 package co.edu.uniquindio.unicine.servicios;
 
-import co.edu.uniquindio.unicine.entidades.Cliente;
-import co.edu.uniquindio.unicine.entidades.Compra;
-import co.edu.uniquindio.unicine.entidades.Pelicula;
+import co.edu.uniquindio.unicine.entidades.*;
 import co.edu.uniquindio.unicine.repo.ClienteRepo;
+import co.edu.uniquindio.unicine.repo.CuponRepo;
+import co.edu.uniquindio.unicine.repo.FuncionRepo;
 import co.edu.uniquindio.unicine.repo.PeliculaRepo;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +17,17 @@ public class ClienteServicioImpl implements ClienteServicio {
     private final ClienteRepo clienteRepo;
     private final EmailServicio emailServicio;
     private final PeliculaRepo peliculaRepo;
+    private final FuncionRepo funcionRepo;
+    private final CuponRepo cuponRepo;
 
-    public ClienteServicioImpl(ClienteRepo clienteRepo, EmailServicio emailServicio, PeliculaRepo peliculaRepo) {
+    public ClienteServicioImpl(ClienteRepo clienteRepo, EmailServicio emailServicio, PeliculaRepo peliculaRepo, FuncionRepo funcionRepo,CuponRepo cuponRepo) {
 
         this.clienteRepo = clienteRepo;
         this.emailServicio = emailServicio;
         this.peliculaRepo = peliculaRepo;
+        this.funcionRepo = funcionRepo;
+        this.cuponRepo =cuponRepo;
+
     }
 
     @Override
@@ -86,6 +91,7 @@ public class ClienteServicioImpl implements ClienteServicio {
 
     @Override
     public List<Cliente> listarClientes() {
+
         return clienteRepo.findAll();
     }
 
@@ -105,8 +111,16 @@ public class ClienteServicioImpl implements ClienteServicio {
     }
 
     @Override
-    public boolean redimirCupon(Integer codigoCupon) {
-        return false;
+    public  CuponCliente crearCuponCliente(Integer codigoCupon) throws  Exception{
+
+        CuponCliente cupon = cuponRepo.findById(codigoCupon).orElse(null);
+
+        if(cupon==null){
+            throw new Exception("El cupón no existe");
+        }
+        //Se crea cualquier código para enviarlo al usuario
+        //String codigoCuponGenerado = " "+obtenerLetraAleatoria()+obtenerFechaMili()+obtenerLetraAleatoria();
+    return cupon;
     }
 
     @Override
@@ -118,15 +132,46 @@ public class ClienteServicioImpl implements ClienteServicio {
         return guardado;
     }
 
-    @Override
-
-    public List<Pelicula> listarPeliculas(String nombre){
-        List<Pelicula> guardada= peliculaRepo.buscarPelicula(nombre);
-        return guardada;
-    }
 
     @Override
     public boolean cambiarPassword(Integer codigoCliente) throws Exception {
         return false;
     }
+
+    @Override
+    public List<Pelicula> listarPorestadoCiudad(Integer codigoCiudad, boolean estadoPelicula) throws Exception{
+       return funcionRepo.listarPeliculasEstadoCiudad(codigoCiudad,estadoPelicula);
+    }
+
+    @Override
+    public List<Pelicula> listarPorestado(boolean estado) throws Exception {
+        return funcionRepo.listarPeliculasEstado(estado);
+    }
+
+    @Override
+    public List<Funcion> listarPorCiudad(Integer codigoCiudad) throws Exception{
+            return funcionRepo.listarFuncionesCiudad(codigoCiudad);
+    }
+
+    @Override
+    public List<Funcion> listarPorTeatro(Integer codigoTeatro) throws Exception {
+        return funcionRepo.listarFuncionesTeatro(codigoTeatro);
+    }
+
+    @Override
+    public List<CuponCliente> listaCuponesCliente(Integer codigoCliente) throws Exception {
+        Cliente guardado = clienteRepo.findById(codigoCliente).orElse(null);
+        if(guardado==null){
+            throw new Exception("El cliente no existe");
+        }
+        return cuponRepo.listarCuponesCliente(codigoCliente);
+    }
+
+
+    @Override
+    public List<Pelicula> listarPeliculas(String nombre){
+        List<Pelicula> guardada= peliculaRepo.buscarPelicula(nombre);
+        return guardada;
+    }
+
 }

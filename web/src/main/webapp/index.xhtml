@@ -5,6 +5,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -22,6 +23,8 @@
             <p:linkButton value="Registrarse" href="/cliente/registro.xhtml" styleClass="me-5" style="background-color: #a52834"/>
         </p>
     </nav>
+
+
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <h:graphicImage styleClass="img-icon me-5" library="img" name="4363530.png"/>
@@ -60,16 +63,142 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1>En cartelera</h1>
+
+    <div class="cuerpo-pagina">
+
+
+    <div jsf:id="listas_peliculas" class="container">
+
         <div>
+            <h3 class="mt-4 mb-4">En cartelera</h3>
+
+
+
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
+                            <h3 class="mb-0">#{pelicula.nombre}</h3>
+                            <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
+                            <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p:repeat value="#{inicioBean.peliculasCartelera}" var="pelicula">
+                <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
+                            <h3 class="mb-0">#{pelicula.nombre}</h3>
+                            <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
+                            <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </p:repeat>
+
+</div>
 
         </div>
-        <h1>Proximamente</h1>
-        <div>
 
+        <hr class="mt-5"/>
+        <div>
+            <h3 class="mt-2 mb-4">Proximamente</h3>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
+                            <h3 class="mb-0">#{pelicula.nombre}</h3>
+                            <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
+                            <a href="#" class="stretched-link">Continue reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p:repeat value="#{inicioBean.peliculasProximas}" var="pelicula">
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative item-pelicula">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">#{pelicula.generos}</strong>
+                                <h3 class="mb-0">#{pelicula.nombre}</h3>
+                                <p class="card-text mb-auto">#{pelicula.sinopsis}</p>
+                                <a href="#" class="stretched-link">Continue reading</a>
+                            </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p:repeat>
         </div>
 
     </div>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <h:graphicImage styleClass="img-icon me-5" library="img" name="4363530.png"/>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-muted" href="#"><i class="pi pi-twitter"/> </a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="pi pi-instagram"/> </a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="pi pi-facebook"/> </a></li>
+            </ul>
+        </footer>
+    </div>
+
+<p:dialog id="dialogo_ciudad" modal="true" widgetVar="dialogo_ciudad" visible="true">
+<h:form>
+
+    <h:panelGrid columns="2" cellpadding="5">
+
+        <p:outputLabel for="ciudad_origen" value="Ciudad:"/>
+
+        <p:selectOneMenu id="ciudad_origen" value="#{inicioBean.ciudad}" converter="#{ciudadConverter}">
+            <f:selectItem itemLabel="Seleccione una ciudad" noSelectionOption="true" itemValue="#{null}"/>
+            <f:selectItems value="#{teatroBean.ciudades}" var="ciudad" itemLabel="#{ciudad.nombre}" itemValue="#{ciudad}"/>
+        </p:selectOneMenu>
+
+        <p:message for="ciudad_origen"/>
+
+    </h:panelGrid>
+    <p:commandButton value="Seleccionar ciudad" action="#{inicioBean.elegirCiudad()}" styleClass="mr-4" icon="pi pi-check" update="@form, listas_peliculas"
+                     oncomplete="PF('dialogo_ciudad').hide()" style="background-color: #a52834" />
+    <p:growl for="mensaje_bean" showDetail="true"/>
+
+</h:form>
+
+
+</p:dialog>
+
+
+
+
+
 </h:body>
 </html>

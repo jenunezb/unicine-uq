@@ -4,9 +4,9 @@ insert into cliente values (3, "jacobo@gmail.com", 0, "ruta_foto","jacobo", "123
 insert into cliente values (4, "gabriela@gmail.com", 1, "ruta_foto","gabriela nuñez", "123");
 insert into cliente values (5, "isabella@gmail.com", 1, "ruta_foto","isabella berjan", "123");
 
-insert into cliente_telefono values(1, "casa", "3044883381");
-insert into cliente_telefono values(1, "oficina", "3013066787");
-insert into cliente_telefono values(2, "oficina", "3013066784");
+insert into cliente_telefono values(1, "casa", "3044883381")
+insert into cliente_telefono values(1, "oficina", "3013066787")
+insert into cliente_telefono values(2, "oficina", "3013066784")
 insert into cliente_telefono values(3, "oficina", "3013066785");
 
 insert into ciudad values (2,"Calarca");
@@ -54,11 +54,11 @@ insert into sala values (3, "sala 3d", 1, 2);
 insert into sala values (4, "sala Mega", 4, 3);
 insert into sala values (5, "sala doble", 2, 3);
 
-insert into entrada values (1, 1, 2, 7000, null);
-insert into entrada values (2, 1, 3, 7000, null);
-insert into entrada values (3, 1, 4, 7000, null);
-insert into entrada values (4, 2, 1, 7000, null);
-insert into entrada values (5, 4, 1, 7000, null);
+insert into sala values (1, "sala multiple", 2, 5);
+insert into sala values (2, "sala simple", 3, 4);
+insert into sala values (3, "sala 3d", 1, 2);
+insert into sala values (4, "sala Mega", 4, 3);
+insert into sala values (5, "sala doble", 2, 3);
 
 insert into cupon values (1, " el criterio es tal", "la descripcion es x", 0.8, '2022/06/19');
 insert into cupon values (2, " el criterio es tal", "la descripcion es x", 0.9, '2022/01/19');
@@ -97,11 +97,11 @@ insert into funcion values (5, 2500, 4, 5, 1);
     Cédula del cliente
     Código de la función
  */
-insert into compra values (1, '2022-11-09', 'NEQUI', 6800, 2, null);
-insert into compra values (2, '2021-11-19', 'DAVIPLATA', 16800, 3, null);
-insert into compra values (3, '2023-01-09', 'VISA', 34800, 4, null);
-insert into compra values (4, '2022-11-09', 'NEQUI', 65800, 1, null);
-insert into compra values (5, '2022-11-09', 'NEQUI', 9000, 5, null);
+insert into funcion values (1, 3400, 1, 3, 2);
+insert into funcion values (2, 7400, 2, 2, 3);
+insert into funcion values (3, 13400, 3, 1, 4);
+insert into funcion values (4, 15400, 3, 4, 4);
+insert into funcion values (5, 2500, 4, 5, 1);
 
 insert into confiteria values (1, "crispetas grandes", 32500, "url_imagen");
 insert into confiteria values (2, "crispetas medianas", 25500, "url_imagen");
